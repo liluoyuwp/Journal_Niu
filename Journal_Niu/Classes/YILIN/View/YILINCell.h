@@ -11,6 +11,8 @@
 @class YILINModel;
 @interface YILINCell : RootTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+
 - (void)updateYilinCellWithModel:(YILINModel *)model;
 
 @end

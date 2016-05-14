@@ -8,6 +8,7 @@
 
 #import "YiLinDetailViewController.h"
 #import "CustomURLCache.h"
+#import "AppTool.h"
 
 @interface YiLinDetailViewController ()<UIWebViewDelegate>
 
@@ -41,16 +42,12 @@
 
 - (void)initUI {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"＜返回" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonPopBack)];
+    self.navigationItem.title = @"意林";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonShare)];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
-}
-
-- (void)barButtonPopBack {
-    CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
-    urlCache.isCache = NO;
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)updateData {
@@ -79,6 +76,21 @@
     [_webView.scrollView.mj_header endRefreshing];
     [self hideHUD];
     NSLog(@"%@",error);
+}
+
+#pragma mark - bar button actions.
+- (void)barButtonShare {
+    
+    [AppTool shareInViewController:self
+                              text:_text
+                             image:_image
+                          detailID:_yiLinDetail_id];
+}
+
+- (void)barButtonPopBack {
+    CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
+    urlCache.isCache = NO;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

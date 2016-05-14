@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface AppDelegateTool : NSObject
+@interface AppTool : NSObject
 
 /// 初始化友盟分享管理类.
 + (void)initializeUMSocial;
@@ -21,5 +22,11 @@
 
 /// 友盟分享,这里处理新浪微博SSO授权进入新浪微博客户端后进入后台，再返回原来应用.
 + (void)delegateToolDidBecomeActive;
+
+/// 分享调用的接口.
++ (void)shareInViewController:(UIViewController *)vc
+                         text:(NSString *)text
+                        image:(UIImage *)image
+                     detailID:(NSString *)detail_id;
 
 @end

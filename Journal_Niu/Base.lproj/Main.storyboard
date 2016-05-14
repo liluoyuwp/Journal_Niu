@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MML-ym-j35">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MML-ym-j35">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -504,29 +504,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VD9-Nj-xsK">
-                                <rect key="frame" x="180" y="101" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Zoa-rm-GNw"/>
-                                    <constraint firstAttribute="width" constant="240" id="zza-Qq-nD1"/>
-                                </constraints>
-                            </imageView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-F4-YRB">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="c6N-Kw-amo" id="dF3-Zp-GX7"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VD9-Nj-xsK" firstAttribute="centerX" secondItem="hqm-IP-KjN" secondAttribute="centerX" id="bXe-62-iGW"/>
-                            <constraint firstItem="VD9-Nj-xsK" firstAttribute="top" secondItem="h7p-wk-0Qo" secondAttribute="bottom" constant="37" id="sMy-Us-EGh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V6y-F4-YRB" secondAttribute="trailing" constant="-20" id="DGs-au-3U2"/>
+                            <constraint firstItem="V6y-F4-YRB" firstAttribute="leading" secondItem="hqm-IP-KjN" secondAttribute="leadingMargin" constant="-20" id="J7j-5b-2Dw"/>
+                            <constraint firstItem="V6y-F4-YRB" firstAttribute="top" secondItem="h7p-wk-0Qo" secondAttribute="bottom" id="MLj-Vn-0GX"/>
+                            <constraint firstItem="SGL-4S-JuT" firstAttribute="top" secondItem="V6y-F4-YRB" secondAttribute="bottom" id="vlw-tJ-7LG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="微博" id="JSO-6T-aI0">
-                        <barButtonItem key="rightBarButtonItem" title="分享" id="7Vt-Tw-iDy">
-                            <connections>
-                                <action selector="分享:" destination="c6N-Kw-amo" id="FgJ-Ds-bp5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="微博" id="JSO-6T-aI0"/>
                     <connections>
-                        <outlet property="ddd" destination="VD9-Nj-xsK" id="IoC-RC-DKf"/>
+                        <outlet property="webView" destination="V6y-F4-YRB" id="DF6-t7-EKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq8-yw-84I" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AppDelegateTool.h"
+#import "AppTool.h"
 #import "CustomURLCache.h"
 
 @interface AppDelegate ()
@@ -20,16 +20,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [AppDelegateTool initializeCache];
+    [AppTool initializeCache];
     
-    [AppDelegateTool initializeUMSocial];
+    [AppTool initializeUMSocial];
     
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return  [AppDelegateTool delegateToolOpenURL:url];
+    return  [AppTool delegateToolOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -49,7 +49,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-    [AppDelegateTool delegateToolDidBecomeActive];
+    [AppTool delegateToolDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -7,45 +7,65 @@
 //
 
 #import "WeiboViewController.h"
-#import "UMSocial.h"
-#import "UIImage+GIF.h"
 
-@interface WeiboViewController ()<UMSocialUIDelegate>
+@interface WeiboViewController ()<UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *ddd;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
 @implementation WeiboViewController
 
-- (IBAction)分享:(id)sender {
-    //如果需要分享回调，请将delegate对象设置self，并实现下面的回调方法
-    [UMSocialSnsService presentSnsIconSheetView:self
-                                         appKey:UMSOCIAL_KEY
-                                      shareText:@"黎洛羽"
-                                     shareImage:[UIImage sd_animatedGIFNamed:@"aaaaaaaaa"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToQzone,UMShareToSina]
-                                       delegate:self];
-
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.ddd.image = [UIImage sd_animatedGIFNamed:@"aaaaaaaaa"];
+    
+    [self initUI];
+    
+    [self showHUD];
+    
+    [self refreshUI];
+}
+
+- (void)initUI {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"    " style:UIBarButtonItemStylePlain target:self action:@selector(webViewBack)];
+}
+
+- (void)refreshUI {
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:WEIBO_WEB_URL]]];
+}
+
+#pragma mark - UIWebViewDelegate 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self hideHUD];
+    [self showBackButtonOrNot];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
+    [self hideHUD];
+    [self showBackButtonOrNot];
+}
+
+#pragma mark - bar button action
+- (void)webViewBack {
+    [self.webView goBack];
+}
+
+#pragma mark - methods
+- (void)showBackButtonOrNot {
+    if (self.webView.canGoBack) {
+        self.navigationItem.leftBarButtonItem.title = @"＜";
+        self.navigationItem.leftBarButtonItem.enabled = YES;
+    } else {
+        self.navigationItem.leftBarButtonItem.title = @"";
+        self.navigationItem.leftBarButtonItem.enabled = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
 
 @end

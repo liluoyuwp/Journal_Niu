@@ -62,7 +62,7 @@
 		5CC599A91CC1D4E400C09BE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599A71CC1D4E400C09BE9 /* Main.storyboard */; };
 		5CC599AB1CC1D4E400C09BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599AA1CC1D4E400C09BE9 /* Assets.xcassets */; };
 		5CC599AE1CC1D4E400C09BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599AC1CC1D4E400C09BE9 /* LaunchScreen.storyboard */; };
-		5CC5AB8A1CD87F8400C221B0 /* AppDelegateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5AB891CD87F8400C221B0 /* AppDelegateTool.m */; };
+		5CC5AB8A1CD87F8400C221B0 /* AppTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5AB891CD87F8400C221B0 /* AppTool.m */; };
 		5CD8CA861CC4DE5100AB1F92 /* ZhitanhuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8CA851CC4DE5100AB1F92 /* ZhitanhuiViewController.m */; };
 		5CD8CA8A1CC4DE7400AB1F92 /* WeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8CA891CC4DE7400AB1F92 /* WeiboViewController.m */; };
 		5CD8CA8E1CC4DFE000AB1F92 /* WPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8CA8D1CC4DFE000AB1F92 /* WPAlertView.m */; };
@@ -170,8 +170,8 @@
 		5CC599AA1CC1D4E400C09BE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC599AD1CC1D4E400C09BE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CC599AF1CC1D4E400C09BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
-		5CC5AB881CD87F8400C221B0 /* AppDelegateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateTool.h; sourceTree = "<group>"; };
-		5CC5AB891CD87F8400C221B0 /* AppDelegateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTool.m; sourceTree = "<group>"; };
+		5CC5AB881CD87F8400C221B0 /* AppTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTool.h; sourceTree = "<group>"; };
+		5CC5AB891CD87F8400C221B0 /* AppTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTool.m; sourceTree = "<group>"; };
 		5CD8CA721CC4D9BE00AB1F92 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		5CD8CA731CC4D9BE00AB1F92 /* YLAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLAPI.h; sourceTree = "<group>"; };
 		5CD8CA841CC4DE5100AB1F92 /* ZhitanhuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhitanhuiViewController.h; path = Zhitanhui/ZhitanhuiViewController.h; sourceTree = "<group>"; };
@@ -400,7 +400,7 @@
 		5C69887D1CC1E2CB007734B4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				5CC5AB871CD87F7000C221B0 /* AppDelegateTool */,
+				5CC5AB871CD87F7000C221B0 /* AppTool */,
 				5C8377271CE30D29009CCD73 /* SegmentedControl */,
 				5C8376FD1CE30C4B009CCD73 /* CoreDataManager */,
 				5CEAB02B1CCDEFF500BDC408 /* WebViewCache */,
@@ -525,12 +525,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5CC5AB871CD87F7000C221B0 /* AppDelegateTool */ = {
+		5CC5AB871CD87F7000C221B0 /* AppTool */ = {
 			isa = PBXGroup;
 			children = (
-				5CC5AB881CD87F8400C221B0 /* AppDelegateTool.h */,
-				5CC5AB891CD87F8400C221B0 /* AppDelegateTool.m */,
+				5CC5AB881CD87F8400C221B0 /* AppTool.h */,
+				5CC5AB891CD87F8400C221B0 /* AppTool.m */,
 			);
+			name = AppTool;
 			path = AppDelegateTool;
 			sourceTree = "<group>";
 		};
@@ -802,7 +803,7 @@
 				5C00B4B91CC5C49200FEAA9F /* YILINBaseViewController.m in Sources */,
 				5C69888A1CC1E2CB007734B4 /* SCNavTabBarController.m in Sources */,
 				5CD8CA941CC4E53800AB1F92 /* YILINViewController.m in Sources */,
-				5CC5AB8A1CD87F8400C221B0 /* AppDelegateTool.m in Sources */,
+				5CC5AB8A1CD87F8400C221B0 /* AppTool.m in Sources */,
 				5CD8CA8A1CC4DE7400AB1F92 /* WeiboViewController.m in Sources */,
 				5C00B53E1CC8BCB100FEAA9F /* LaughCell.m in Sources */,
 				5C00B49F1CC4EA4800FEAA9F /* RootNavigationController.m in Sources */,

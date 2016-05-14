@@ -12,4 +12,8 @@
 
 @property (nonatomic, copy) NSString *yiLinDetail_id;
 
+@property (nonatomic, copy) NSString *text;
+
+@property (nonatomic, strong) UIImage *image;
+
 @end

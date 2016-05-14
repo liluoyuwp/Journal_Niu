@@ -118,9 +118,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    YILINCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     YILINModel *model = _arrayDS[indexPath.row];
+    
     YiLinDetailViewController *vc = (id)[self initViewControllerWithStoryBoardID:@"yilindetail"];
     vc.yiLinDetail_id = model.detail_id;
+    vc.text = model.title;
+    vc.image = cell.iconImageView.image;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -62,4 +62,7 @@
 //指谈会 跟帖 按时间
 #define PARTICPANCE_COMMENTLIST_TIME_URL @"http://yl.cms.palmtrends.com/api_v2.php?action=commentlist&id=%@&offset=%d&count=15&ordertype=1&uid=10288928&platform=a"
 
+//微博网页版
+#define WEIBO_WEB_URL @"https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=5091_0026&r=http%3A%2F%2Fm.weibo.cn%2F%3Fwm%3D5091_0026"
+
 #endif

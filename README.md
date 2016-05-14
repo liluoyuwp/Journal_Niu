@@ -1,2 +1,2 @@
 # Journal_Niu
-github远程仓库,测试
+如果能重来,我愿做李白.

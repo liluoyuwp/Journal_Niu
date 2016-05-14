@@ -14,6 +14,9 @@
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialQQHandler.h"
 #import "UMSocialQQHandler.h"
+#import "UMSocialWhatsappHandler.h"
+#import "UMSocialTumblrHandler.h"
+#import "UMSocialLineHandler.h"
 #import "YLAPI.h"
 
 @interface AppTool ()<UMSocialUIDelegate>
@@ -43,6 +46,14 @@
     [UMSocialQQHandler setSupportWebView:YES];
     
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+    //打开whatsapp
+    [UMSocialWhatsappHandler openWhatsapp:UMSocialWhatsappMessageTypeImage];
+    
+    //打开Tumblr
+    [UMSocialTumblrHandler openTumblr];
+    
+    //打开line
+    [UMSocialLineHandler openLineShare:UMSocialLineMessageTypeImage];
 }
 
 + (BOOL)delegateToolOpenURL:(NSURL *)url {

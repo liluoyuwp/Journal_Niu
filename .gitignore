@@ -19,6 +19,7 @@ xcuserdata
 
 ## Other
 *.xccheckout
+*.DS_Store
 *.moved-aside
 *.xcuserstate
 *.xcscmblueprint

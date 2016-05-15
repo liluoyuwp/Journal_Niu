@@ -66,6 +66,11 @@
 
 - (IBAction)pinglunButton:(id)sender {
     
+    if (self.textView.text.length > 140) {
+        [WPAlertView showAlertWithMessage:@"您的评论不符要求(长度不应超过140字)" sureKey:nil];
+        return;
+    }
+    
     [self showHUD];
     
     NSString *strUrl = [NSString stringWithFormat:PARTICPANCE_PINGLUN_URL, self.textView.text, self.topic_id];

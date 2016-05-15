@@ -40,6 +40,24 @@
     }];
 }
 
++ (void)sendPinglunTextWithUrlString:(NSString *)urlString
+                             success:(void (^)(NSDictionary *dict))success
+                             failure:(void (^)(NSError *error))failure {
+    [APIManager requestOfGetWithUrl:urlString param:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseDict) {
+        
+        if (responseDict.allKeys.count >= 2) {
+            if (success) {
+                success(responseDict);
+            }
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 #pragma mark - KVC
 - (void)setValue:(id)value forKey:(NSString *)key {
     [super setValue:value forKey:key];

@@ -46,14 +46,6 @@
     [UMSocialQQHandler setSupportWebView:YES];
     
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
-    //打开whatsapp
-    [UMSocialWhatsappHandler openWhatsapp:UMSocialWhatsappMessageTypeImage];
-    
-    //打开Tumblr
-    [UMSocialTumblrHandler openTumblr];
-    
-    //打开line
-    [UMSocialLineHandler openLineShare:UMSocialLineMessageTypeImage];
 }
 
 + (BOOL)delegateToolOpenURL:(NSURL *)url {
@@ -85,8 +77,11 @@
                                        delegate:(id)self];
     
     if (!detail_id) return;
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = [NSString stringWithFormat:YILIN_INFORMATION_URL,detail_id];
-    [UMSocialData defaultData].extConfig.qqData.url = [NSString stringWithFormat:YILIN_INFORMATION_URL,detail_id];
+    NSString *strUrl = [NSString stringWithFormat:YILIN_INFORMATION_URL,detail_id];
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = strUrl;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = strUrl;
+    [UMSocialData defaultData].extConfig.qqData.url = strUrl;
+    [UMSocialData defaultData].extConfig.qzoneData.url = strUrl;
 }
 
 @end

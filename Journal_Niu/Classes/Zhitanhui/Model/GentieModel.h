@@ -29,4 +29,8 @@
                            success:(void (^)(NSArray *array))success
                            failure:(void (^)(NSError *error))failure;
 
++ (void)sendPinglunTextWithUrlString:(NSString *)urlString
+                             success:(void (^)(NSDictionary *dict))success
+                             failure:(void (^)(NSError *error))failure;
+
 @end

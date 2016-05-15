@@ -62,6 +62,9 @@
 //指谈会 跟帖 按时间
 #define PARTICPANCE_COMMENTLIST_TIME_URL @"http://yl.cms.palmtrends.com/api_v2.php?action=commentlist&id=%@&offset=%d&count=15&ordertype=1&uid=10288928&platform=a"
 
+//跟帖 评论
+#define PARTICPANCE_PINGLUN_URL @"http://yl.cms.palmtrends.com/api_v2.php?action=wzpl&offset=0&count=15&content=%@&id=%@&e=8e1a3ce94149f50df91a29b573933183&uid=10288928&pid=10048&mobile=iPhone8,1&platform=i"
+
 //微博网页版
 #define WEIBO_WEB_URL @"https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=5091_0026&r=http%3A%2F%2Fm.weibo.cn%2F%3Fwm%3D5091_0026"
 

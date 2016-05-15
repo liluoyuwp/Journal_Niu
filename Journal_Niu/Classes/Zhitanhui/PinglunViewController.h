@@ -10,4 +10,6 @@
 
 @interface PinglunViewController : RootViewController
 
+@property (nonatomic, copy) NSString *topic_id;
+
 @end

@@ -10,6 +10,7 @@
 #import "GentieModel.h"
 #import "GentieCell.h"
 #import "MPSegmentedControl.h"
+#import "PinglunViewController.h"
 
 @interface GentieViewController ()<UITableViewDelegate,UITableViewDataSource,MPSegmentedControlDelegate>
 
@@ -67,12 +68,12 @@
         
         if (!_isLoadMore) [_arrayDS removeAllObjects];
         
-        [weakSelf endRefresh:_isLoadMore];
         [_arrayDS addObjectsFromArray:array];
         [_tableView reloadData];
         
         [weakSelf hideHUD];
-        
+        [weakSelf endRefresh:_isLoadMore];
+
     } failure:^(NSError *error) {
         
         [weakSelf hideHUD];
@@ -143,14 +144,18 @@
     [self showHUD];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"pinglun"]) {
+        UINavigationController *nav = segue.destinationViewController;
+        PinglunViewController *vc = nav.viewControllers[0];
+        vc.topic_id = self.gentie_id;
+    }
 }
-*/
+
 
 @end

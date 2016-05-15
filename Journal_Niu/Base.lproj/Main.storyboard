@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MML-ym-j35">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MML-ym-j35">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -529,7 +529,7 @@
             </objects>
             <point key="canvasLocation" x="1824" y="2559"/>
         </scene>
-        <!--指谈会-->
+        <!--往期-->
         <scene sceneID="Imc-PU-EFw">
             <objects>
                 <viewController id="74C-7d-3q1" customClass="WangqiViewController" sceneMemberID="viewController">
@@ -558,7 +558,7 @@
                             <constraint firstAttribute="trailing" secondItem="LvI-6n-qbR" secondAttribute="trailing" id="fVn-qy-vsk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="指谈会" id="rQN-ny-XIj"/>
+                    <navigationItem key="navigationItem" title="往期" id="rQN-ny-XIj"/>
                     <connections>
                         <outlet property="tableView" destination="LvI-6n-qbR" id="iBU-vy-MsH"/>
                     </connections>
@@ -596,7 +596,13 @@
                             <constraint firstItem="sU7-r2-sWn" firstAttribute="top" secondItem="LgA-uF-YO6" secondAttribute="bottom" id="zar-9r-Q7f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="跟帖" id="AuL-vI-RER"/>
+                    <navigationItem key="navigationItem" title="跟帖" id="AuL-vI-RER">
+                        <barButtonItem key="rightBarButtonItem" title="评论" id="fB6-nA-FN4">
+                            <connections>
+                                <segue destination="a9I-r1-iY8" kind="presentation" identifier="pinglun" id="W7B-m3-azJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="LgA-uF-YO6" id="tkV-Ab-viT"/>
                     </connections>
@@ -616,32 +622,60 @@
                     <view key="view" contentMode="scaleToFill" id="xPT-YR-eZB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXx-6a-Vd6">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FY8-dv-hKI" id="L5Y-sh-J66"/>
+                                </connections>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0i9-bu-xUn" firstAttribute="top" secondItem="lXx-6a-Vd6" secondAttribute="bottom" id="Fwm-4L-b4O"/>
+                            <constraint firstItem="lXx-6a-Vd6" firstAttribute="leading" secondItem="xPT-YR-eZB" secondAttribute="leading" id="aK7-2v-KOr"/>
+                            <constraint firstAttribute="trailing" secondItem="lXx-6a-Vd6" secondAttribute="trailing" id="ebA-nT-bGD"/>
+                            <constraint firstItem="lXx-6a-Vd6" firstAttribute="top" secondItem="Gba-yB-FR0" secondAttribute="bottom" id="kgK-xB-LLP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="评论" id="jXC-9t-5pR">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;返回" id="5bm-hh-76p"/>
-                        <barButtonItem key="rightBarButtonItem" title="发送" id="CFK-0n-vjt"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="5bm-hh-76p">
+                            <connections>
+                                <action selector="dismissPinglunControllerView:" destination="FY8-dv-hKI" id="wHK-5D-sVb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="CFK-0n-vjt">
+                            <connections>
+                                <action selector="pinglunButton:" destination="FY8-dv-hKI" id="5OM-Rc-RqT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="lXx-6a-Vd6" id="lUm-sV-XFA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4o-YB-Cdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4745" y="1817"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="03H-Ye-Rao">
+        <scene sceneID="w2p-iC-mLy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KXb-vC-4I6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a9I-r1-iY8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bIX-bs-gy6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BQN-F7-9l6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="FY8-dv-hKI" kind="relationship" relationship="rootViewController" id="sGx-TY-SLE"/>
+                        <segue destination="FY8-dv-hKI" kind="relationship" relationship="rootViewController" id="HUl-PA-iOS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Go-zH-P27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FhQ-hK-Pff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3933" y="1817"/>
         </scene>

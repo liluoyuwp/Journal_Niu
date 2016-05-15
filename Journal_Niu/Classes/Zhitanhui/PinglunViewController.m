@@ -7,22 +7,86 @@
 //
 
 #import "PinglunViewController.h"
+#import "GentieModel.h"
 
-@interface PinglunViewController ()
+@interface PinglunViewController ()<UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
 @implementation PinglunViewController
+{
+    UILabel *_placeLabel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString * str = [@"" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    [self initUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initUI {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    [self.textView becomeFirstResponder];
+    
+    _placeLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, CGRectGetWidth(self.textView.frame), 21)];
+    _placeLabel.text = @"请输入您的评论,最多140个字...";
+    _placeLabel.textColor = [UIColor lightGrayColor];
+    _placeLabel.backgroundColor = [UIColor clearColor];
+    _placeLabel.hidden = NO;
+    [self.textView addSubview:_placeLabel];
+}
+
+#pragma mark - UITextViewDelegate
+- (void)textViewDidChange:(UITextView *)textView {
+    self.navigationItem.rightBarButtonItem.enabled = self.textView.hasText;
+    _placeLabel.hidden = self.textView.hasText;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if ([text isEqualToString:@"\n"]) {
+        
+        [self.view endEditing:YES];
+        [self pinglunButton:nil];
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark - bar button actions.
+- (IBAction)dismissPinglunControllerView:(id)sender {
+    [self.view endEditing:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)pinglunButton:(id)sender {
+    
+    [self showHUD];
+    
+    NSString *strUrl = [NSString stringWithFormat:PARTICPANCE_PINGLUN_URL, self.textView.text, self.topic_id];
+    strUrl = [strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    WS(weakSelf);
+    [GentieModel sendPinglunTextWithUrlString:strUrl success:^(NSDictionary *dict) {
+        
+        [weakSelf hideHUD];
+        
+        if ([dict isKindOfClass:[NSDictionary class]]) {
+            [WPAlertView showAlertWithMessage:dict[@"msg"] sureKey:^{
+                [weakSelf dismissPinglunControllerView:nil];
+            }];
+        }
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        [WPAlertView showAlertForNetError];
+        [weakSelf hideHUD];
+    }];
 }
 
 /*

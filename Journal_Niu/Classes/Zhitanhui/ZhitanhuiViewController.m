@@ -44,7 +44,7 @@
 }
 
 - (void)initUI {
-    
+    self.view.hidden = YES;
 }
 
 - (void)requestData {
@@ -65,6 +65,7 @@
     self.titleLabel.text = _model.title;
     self.textView.text = [NSString stringWithFormat:@"        %@,",_model.content];
     [self.gentieButton setTitle:[NSString stringWithFormat:@"跟帖     %@",_model.count] forState:UIControlStateNormal];
+    self.view.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {

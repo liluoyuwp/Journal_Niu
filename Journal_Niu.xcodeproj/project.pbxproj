@@ -38,6 +38,7 @@
 		5C00B53E1CC8BCB100FEAA9F /* LaughCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C00B53C1CC8BCB100FEAA9F /* LaughCell.m */; };
 		5C00B53F1CC8BCB100FEAA9F /* LaughCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C00B53D1CC8BCB100FEAA9F /* LaughCell.xib */; };
 		5C23E24A1CE1920E0069CF8B /* YiLinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */; };
+		5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF051CE848D500988492 /* PinglunViewController.m */; };
 		5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A0D1CC9F992001614BB /* ImagesModel.m */; };
 		5C451A161CCA0F8D001614BB /* LaughDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A151CCA0F8D001614BB /* LaughDetailViewController.m */; };
 		5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6988801CC1E2CB007734B4 /* SCNavTabBar.bundle */; };
@@ -134,6 +135,8 @@
 		5C00B53D1CC8BCB100FEAA9F /* LaughCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaughCell.xib; sourceTree = "<group>"; };
 		5C23E2481CE1920E0069CF8B /* YiLinDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiLinDetailViewController.h; sourceTree = "<group>"; };
 		5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiLinDetailViewController.m; sourceTree = "<group>"; };
+		5C2DDF041CE848D500988492 /* PinglunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinglunViewController.h; path = Zhitanhui/PinglunViewController.h; sourceTree = "<group>"; };
+		5C2DDF051CE848D500988492 /* PinglunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinglunViewController.m; path = Zhitanhui/PinglunViewController.m; sourceTree = "<group>"; };
 		5C451A0C1CC9F992001614BB /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
 		5C451A0D1CC9F992001614BB /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		5C451A141CCA0F8D001614BB /* LaughDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughDetailViewController.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 				5C00B50E1CC75D1900FEAA9F /* WangqiViewController.m */,
 				5C00B5101CC75FA500FEAA9F /* GentieViewController.h */,
 				5C00B5111CC75FA500FEAA9F /* GentieViewController.m */,
+				5C2DDF041CE848D500988492 /* PinglunViewController.h */,
+				5C2DDF051CE848D500988492 /* PinglunViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -800,6 +805,7 @@
 				5C00B4D01CC5D19D00FEAA9F /* APIManager.m in Sources */,
 				5C83772D1CE30D29009CCD73 /* MPSegmentedControl.m in Sources */,
 				5C00B4A01CC4EA4800FEAA9F /* RootViewController.m in Sources */,
+				5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */,
 				5C00B4B91CC5C49200FEAA9F /* YILINBaseViewController.m in Sources */,
 				5C69888A1CC1E2CB007734B4 /* SCNavTabBarController.m in Sources */,
 				5CD8CA941CC4E53800AB1F92 /* YILINViewController.m in Sources */,

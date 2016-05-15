@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MML-ym-j35">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MML-ym-j35">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -604,6 +604,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsa-MA-0vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3240" y="1817"/>
+        </scene>
+        <!--评论-->
+        <scene sceneID="zK4-06-CLS">
+            <objects>
+                <viewController storyboardIdentifier="pinglun" id="FY8-dv-hKI" customClass="PinglunViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gba-yB-FR0"/>
+                        <viewControllerLayoutGuide type="bottom" id="0i9-bu-xUn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xPT-YR-eZB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="评论" id="jXC-9t-5pR">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;返回" id="5bm-hh-76p"/>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="CFK-0n-vjt"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4o-YB-Cdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4745" y="1817"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="03H-Ye-Rao">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KXb-vC-4I6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bIX-bs-gy6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FY8-dv-hKI" kind="relationship" relationship="rootViewController" id="sGx-TY-SLE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Go-zH-P27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3933" y="1817"/>
         </scene>
     </scenes>
     <resources>

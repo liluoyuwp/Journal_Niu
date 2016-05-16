@@ -39,8 +39,7 @@
 		5C00B53F1CC8BCB100FEAA9F /* LaughCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C00B53D1CC8BCB100FEAA9F /* LaughCell.xib */; };
 		5C23E24A1CE1920E0069CF8B /* YiLinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */; };
 		5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF051CE848D500988492 /* PinglunViewController.m */; };
-		5C2DDF0C1CE9668800988492 /* YiLinCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF091CE9668800988492 /* YiLinCache.m */; };
-		5C2DDF0D1CE9668800988492 /* YiLinCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF0B1CE9668800988492 /* YiLinCache+CoreDataProperties.m */; };
+		5C2DDF171CE9A05200988492 /* MyCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */; };
 		5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A0D1CC9F992001614BB /* ImagesModel.m */; };
 		5C451A161CCA0F8D001614BB /* LaughDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A151CCA0F8D001614BB /* LaughDetailViewController.m */; };
 		5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6988801CC1E2CB007734B4 /* SCNavTabBar.bundle */; };
@@ -58,7 +57,6 @@
 		5C8377001CE30C5C009CCD73 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8376FF1CE30C5C009CCD73 /* CoreDataManager.m */; };
 		5C83772C1CE30D29009CCD73 /* MPSegButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8377291CE30D29009CCD73 /* MPSegButton.m */; };
 		5C83772D1CE30D29009CCD73 /* MPSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83772B1CE30D29009CCD73 /* MPSegmentedControl.m */; };
-		5C8377301CE31566009CCD73 /* MyCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C83772E1CE31566009CCD73 /* MyCacheData.xcdatamodeld */; };
 		5CBD4FAF1CE08A31001270D6 /* aaaaaaaaa.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */; };
 		5CC599A01CC1D4E400C09BE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5999F1CC1D4E400C09BE9 /* main.m */; };
 		5CC599A31CC1D4E400C09BE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC599A21CC1D4E400C09BE9 /* AppDelegate.m */; };
@@ -139,10 +137,7 @@
 		5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiLinDetailViewController.m; sourceTree = "<group>"; };
 		5C2DDF041CE848D500988492 /* PinglunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinglunViewController.h; path = Zhitanhui/PinglunViewController.h; sourceTree = "<group>"; };
 		5C2DDF051CE848D500988492 /* PinglunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinglunViewController.m; path = Zhitanhui/PinglunViewController.m; sourceTree = "<group>"; };
-		5C2DDF081CE9668800988492 /* YiLinCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiLinCache.h; sourceTree = "<group>"; };
-		5C2DDF091CE9668800988492 /* YiLinCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiLinCache.m; sourceTree = "<group>"; };
-		5C2DDF0A1CE9668800988492 /* YiLinCache+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YiLinCache+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5C2DDF0B1CE9668800988492 /* YiLinCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YiLinCache+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5C2DDF161CE9A05200988492 /* MyCacheData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCacheData.xcdatamodel; sourceTree = "<group>"; };
 		5C451A0C1CC9F992001614BB /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
 		5C451A0D1CC9F992001614BB /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		5C451A141CCA0F8D001614BB /* LaughDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughDetailViewController.h; sourceTree = "<group>"; };
@@ -169,7 +164,6 @@
 		5C8377291CE30D29009CCD73 /* MPSegButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSegButton.m; sourceTree = "<group>"; };
 		5C83772A1CE30D29009CCD73 /* MPSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSegmentedControl.h; sourceTree = "<group>"; };
 		5C83772B1CE30D29009CCD73 /* MPSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSegmentedControl.m; sourceTree = "<group>"; };
-		5C83772F1CE31566009CCD73 /* MyCacheData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCacheData.xcdatamodel; sourceTree = "<group>"; };
 		5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aaaaaaaaa.gif; sourceTree = "<group>"; };
 		5CC5999B1CC1D4E400C09BE9 /* Journal_Niu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal_Niu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC5999F1CC1D4E400C09BE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -244,10 +238,9 @@
 		5C00B49D1CC4EA4800FEAA9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C2DDF071CE965C900988492 /* CacheModel */,
-				5C83772E1CE31566009CCD73 /* MyCacheData.xcdatamodeld */,
 				5C00B4A11CC4EA5A00FEAA9F /* Model.h */,
 				5C00B4A21CC4EA5A00FEAA9F /* Model.m */,
+				5C2DDF071CE965C900988492 /* CacheModel */,
 			);
 			name = Model;
 			path = Root/Model;
@@ -403,6 +396,7 @@
 		5C2DDF071CE965C900988492 /* CacheModel */ = {
 			isa = PBXGroup;
 			children = (
+				5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */,
 				5C2DDF0E1CE966CD00988492 /* YILIN */,
 			);
 			path = CacheModel;
@@ -411,10 +405,6 @@
 		5C2DDF0E1CE966CD00988492 /* YILIN */ = {
 			isa = PBXGroup;
 			children = (
-				5C2DDF081CE9668800988492 /* YiLinCache.h */,
-				5C2DDF091CE9668800988492 /* YiLinCache.m */,
-				5C2DDF0A1CE9668800988492 /* YiLinCache+CoreDataProperties.h */,
-				5C2DDF0B1CE9668800988492 /* YiLinCache+CoreDataProperties.m */,
 			);
 			name = YILIN;
 			sourceTree = "<group>";
@@ -821,7 +811,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C2DDF0C1CE9668800988492 /* YiLinCache.m in Sources */,
 				5C00B5091CC63F4E00FEAA9F /* GentieModel.m in Sources */,
 				5C69888C1CC1E2CB007734B4 /* SCPopView.m in Sources */,
 				5CEAB0341CCDEFF500BDC408 /* Util.m in Sources */,
@@ -843,7 +832,6 @@
 				5C00B4C91CC5C54F00FEAA9F /* ArtViewController.m in Sources */,
 				5C8377001CE30C5C009CCD73 /* CoreDataManager.m in Sources */,
 				5C00B4C31CC5C53700FEAA9F /* HorizonViewController.m in Sources */,
-				5C8377301CE31566009CCD73 /* MyCacheData.xcdatamodeld in Sources */,
 				5CC599A31CC1D4E400C09BE9 /* AppDelegate.m in Sources */,
 				5C23E24A1CE1920E0069CF8B /* YiLinDetailViewController.m in Sources */,
 				5C00B4CC1CC5C55B00FEAA9F /* LifeViewController.m in Sources */,
@@ -856,7 +844,7 @@
 				5C83772C1CE30D29009CCD73 /* MPSegButton.m in Sources */,
 				5C00B52B1CC87F4100FEAA9F /* ReadModel.m in Sources */,
 				5C00B4C61CC5C54300FEAA9F /* GrowupViewController.m in Sources */,
-				5C2DDF0D1CE9668800988492 /* YiLinCache+CoreDataProperties.m in Sources */,
+				5C2DDF171CE9A05200988492 /* MyCacheData.xcdatamodeld in Sources */,
 				5C00B4A61CC4EA8400FEAA9F /* YILINModel.m in Sources */,
 				5C00B5281CC86BC000FEAA9F /* ShihuahuaViewController.m in Sources */,
 				5CC599A01CC1D4E400C09BE9 /* main.m in Sources */,
@@ -1068,14 +1056,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5C83772E1CE31566009CCD73 /* MyCacheData.xcdatamodeld */ = {
+		5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5C83772F1CE31566009CCD73 /* MyCacheData.xcdatamodel */,
+				5C2DDF161CE9A05200988492 /* MyCacheData.xcdatamodel */,
 			);
-			currentVersion = 5C83772F1CE31566009CCD73 /* MyCacheData.xcdatamodel */;
-			name = MyCacheData.xcdatamodeld;
-			path = ../../System/MyCacheData.xcdatamodeld;
+			currentVersion = 5C2DDF161CE9A05200988492 /* MyCacheData.xcdatamodel */;
+			path = MyCacheData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

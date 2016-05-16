@@ -8,9 +8,6 @@
 
 #import "CoreDataManager.h"
 
-#import "YiLinCache.h"
-#import "YILINModel.h"
-
 #define TABLE_NAME_YILIN @"YiLinCache" //表名
 
 @implementation CoreDataManager
@@ -54,13 +51,13 @@
     
 #pragma mark - 自动迁移
     //为支持自动迁移 传递一个包含2个key的字典作为参数
-    NSDictionary * options = @{NSMigratePersistentStoresAutomaticallyOption:[NSNumber numberWithBool:YES],
-                                     NSInferMappingModelAutomaticallyOption:[NSNumber numberWithBool:YES]
-                               };
+//    NSDictionary * options = @{NSMigratePersistentStoresAutomaticallyOption:[NSNumber numberWithBool:YES],
+//                                     NSInferMappingModelAutomaticallyOption:[NSNumber numberWithBool:YES]
+//                               };
     
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
@@ -129,6 +126,7 @@
     return self;
 }
 
+/*
 - (void)insertModelToDB:(YILINModel *)model {
     YiLinCache *app = (id)[NSEntityDescription insertNewObjectForEntityForName:TABLE_NAME_YILIN inManagedObjectContext:_managedObjectContext];
     
@@ -213,6 +211,6 @@
     //保存
     [self saveContext];
 }
-
+*/
 
 @end

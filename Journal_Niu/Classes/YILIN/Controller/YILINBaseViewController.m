@@ -10,6 +10,7 @@
 #import "YILINCell.h"
 #import "YILINModel.h"
 #import "YiLinDetailViewController.h"
+#import "CoreDataManager.h"
 
 @interface YILINBaseViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -29,6 +30,7 @@
     [self initUI];
     [self requestData];
     [self addRefreshAndLoadMore];
+    [CoreDataManager shareManager];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

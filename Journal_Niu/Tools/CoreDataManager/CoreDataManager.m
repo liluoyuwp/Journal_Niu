@@ -51,13 +51,13 @@
     
 #pragma mark - 自动迁移
     //为支持自动迁移 传递一个包含2个key的字典作为参数
-//    NSDictionary * options = @{NSMigratePersistentStoresAutomaticallyOption:[NSNumber numberWithBool:YES],
-//                                     NSInferMappingModelAutomaticallyOption:[NSNumber numberWithBool:YES]
-//                               };
+    NSDictionary * options = @{NSMigratePersistentStoresAutomaticallyOption:[NSNumber numberWithBool:YES],
+                                     NSInferMappingModelAutomaticallyOption:[NSNumber numberWithBool:YES]
+                               };
     
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";

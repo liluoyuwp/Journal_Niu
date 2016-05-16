@@ -40,6 +40,8 @@
 		5C23E24A1CE1920E0069CF8B /* YiLinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */; };
 		5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF051CE848D500988492 /* PinglunViewController.m */; };
 		5C2DDF171CE9A05200988492 /* MyCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */; };
+		5C2DDF1C1CE9A41300988492 /* YiLinCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF191CE9A41300988492 /* YiLinCache+CoreDataProperties.m */; };
+		5C2DDF1D1CE9A41300988492 /* YiLinCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF1B1CE9A41300988492 /* YiLinCache.m */; };
 		5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A0D1CC9F992001614BB /* ImagesModel.m */; };
 		5C451A161CCA0F8D001614BB /* LaughDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A151CCA0F8D001614BB /* LaughDetailViewController.m */; };
 		5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6988801CC1E2CB007734B4 /* SCNavTabBar.bundle */; };
@@ -138,6 +140,10 @@
 		5C2DDF041CE848D500988492 /* PinglunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinglunViewController.h; path = Zhitanhui/PinglunViewController.h; sourceTree = "<group>"; };
 		5C2DDF051CE848D500988492 /* PinglunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinglunViewController.m; path = Zhitanhui/PinglunViewController.m; sourceTree = "<group>"; };
 		5C2DDF161CE9A05200988492 /* MyCacheData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCacheData.xcdatamodel; sourceTree = "<group>"; };
+		5C2DDF181CE9A41300988492 /* YiLinCache+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YiLinCache+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5C2DDF191CE9A41300988492 /* YiLinCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YiLinCache+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5C2DDF1A1CE9A41300988492 /* YiLinCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiLinCache.h; sourceTree = "<group>"; };
+		5C2DDF1B1CE9A41300988492 /* YiLinCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiLinCache.m; sourceTree = "<group>"; };
 		5C451A0C1CC9F992001614BB /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
 		5C451A0D1CC9F992001614BB /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		5C451A141CCA0F8D001614BB /* LaughDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughDetailViewController.h; sourceTree = "<group>"; };
@@ -405,6 +411,10 @@
 		5C2DDF0E1CE966CD00988492 /* YILIN */ = {
 			isa = PBXGroup;
 			children = (
+				5C2DDF181CE9A41300988492 /* YiLinCache+CoreDataProperties.h */,
+				5C2DDF191CE9A41300988492 /* YiLinCache+CoreDataProperties.m */,
+				5C2DDF1A1CE9A41300988492 /* YiLinCache.h */,
+				5C2DDF1B1CE9A41300988492 /* YiLinCache.m */,
 			);
 			name = YILIN;
 			sourceTree = "<group>";
@@ -857,6 +867,8 @@
 				5C00B4A31CC4EA5A00FEAA9F /* Model.m in Sources */,
 				5C00B53A1CC8BAA500FEAA9F /* LaughModel.m in Sources */,
 				5C00B50C1CC63F5B00FEAA9F /* WangqiModel.m in Sources */,
+				5C2DDF1D1CE9A41300988492 /* YiLinCache.m in Sources */,
+				5C2DDF1C1CE9A41300988492 /* YiLinCache+CoreDataProperties.m in Sources */,
 				5CD8CA861CC4DE5100AB1F92 /* ZhitanhuiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,17 +57,23 @@
     WS(weakSelf);
     [WangqiModel getWangqiListDataWithUrlString:[NSString stringWithFormat:PARTICPANCE_TALK_WHAT_URL, _offset] success:^(NSArray *array) {
         
-        if (!_isLoadMore) [_arrayDS removeAllObjects];
-        
-        [weakSelf endRefresh:_isLoadMore];
-        [_arrayDS addObjectsFromArray:array];
-        [_tableView reloadData];
+        [weakSelf requestOverWithArray:array];
+        [weakSelf insertWangqiModelToDB:array];
 
     } failure:^(NSError *error) {
         
-        [weakSelf endRefresh:_isLoadMore];
-        NSLog(@"%@",error);
+        NSArray *array = [weakSelf.cdManager searchWangqiModelInDBWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"list"];
+        [weakSelf requestOverWithArray:array];
+        NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
+}
+
+- (void)requestOverWithArray:(NSArray *)array {
+    if (!_isLoadMore) [_arrayDS removeAllObjects];
+    
+    [_arrayDS addObjectsFromArray:array];
+    [_tableView reloadData];
+    [self endRefresh:_isLoadMore];
 }
 
 - (void)endRefresh:(BOOL)isLoadMore {
@@ -119,9 +125,18 @@
 - (void)pushToGentieVCWithId:(NSString *)wangqi_id title:(NSString *)title {
     
     GentieViewController *vc = (id)[self initViewControllerWithStoryBoardID:@"gentie"];
-    vc.gentie_title = title;
     vc.gentie_id = wangqi_id;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - Method
+- (void)insertWangqiModelToDB:(NSArray *)array {
+    [self.cdManager deleteWangqiModelWithWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"list"];
+    for (WangqiModel *model in array) {
+        model.page = [NSString stringWithFormat:@"%ld",_offset];
+        model.type = @"list";
+        [self.cdManager insertWangqiModelInDB:model];
+    }
 }
 
 @end

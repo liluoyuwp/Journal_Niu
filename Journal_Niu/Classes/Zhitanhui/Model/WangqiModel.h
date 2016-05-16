@@ -25,6 +25,8 @@
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *thumb;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *page;
 
 + (void)getWangqiDataWithUrlString:(NSString *)urlString
                            success:(void (^)(WangqiModel *model))success

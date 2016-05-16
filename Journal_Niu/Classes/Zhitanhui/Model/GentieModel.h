@@ -24,6 +24,9 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *uid;
 @property (nonatomic, copy) NSString *up_times;
+@property (nonatomic, copy) NSString *page;
+@property (nonatomic, copy) NSString *gentie_id;
+@property (nonatomic, copy) NSString *type;
 
 + (void)getGentieDataWithUrlString:(NSString *)urlString
                            success:(void (^)(NSArray *array))success

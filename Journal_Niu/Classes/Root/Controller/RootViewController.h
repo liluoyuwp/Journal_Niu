@@ -16,6 +16,8 @@
 
 @interface RootViewController : UIViewController
 
+@property (nonatomic, strong) CoreDataManager *cdManager;
+
 - (id)initViewControllerWithStoryBoardID:(NSString *)storyBoard_id;
 
 - (void)showHUD;

@@ -22,7 +22,6 @@
     NSMutableArray *_arrayDS;
     BOOL _isLoadMore;
     NSInteger _offset;
-    CoreDataManager * _cdManager;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,7 +53,6 @@
     _arrayDS = [NSMutableArray array];
     _isLoadMore = NO;
     _offset = 0;
-    _cdManager = [CoreDataManager shareManager];
 }
 
 - (void)initUI {
@@ -72,7 +70,7 @@
         
     } failure:^(NSError *error) {
         
-        NSArray *array = [_cdManager searchLaughModelInDBWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"laugh"];
+        NSArray *array = [weakSelf.cdManager searchLaughModelInDBWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"laugh"];
         [weakSelf requestOverWithArray:array];
         NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
@@ -145,11 +143,11 @@
 
 #pragma mark - Method
 - (void)insertLaughModelToDB:(NSArray *)array {
-    [_cdManager deleteLaughModelWithWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"laugh"];
+    [self.cdManager deleteLaughModelWithWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"laugh"];
     for (LaughModel *model in array) {
         model.page = [NSString stringWithFormat:@"%ld",_offset];
         model.type = @"laugh";
-        [_cdManager insertLaughModelInDB:model];
+        [self.cdManager insertLaughModelInDB:model];
     }
 }
 

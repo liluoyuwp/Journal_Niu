@@ -37,6 +37,8 @@
 		5C00B53A1CC8BAA500FEAA9F /* LaughModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C00B5391CC8BAA500FEAA9F /* LaughModel.m */; };
 		5C00B53E1CC8BCB100FEAA9F /* LaughCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C00B53C1CC8BCB100FEAA9F /* LaughCell.m */; };
 		5C00B53F1CC8BCB100FEAA9F /* LaughCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C00B53D1CC8BCB100FEAA9F /* LaughCell.xib */; };
+		5C1E9DA01CEA021D009281B2 /* ReadCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E9D9D1CEA021D009281B2 /* ReadCache+CoreDataProperties.m */; };
+		5C1E9DA11CEA021D009281B2 /* ReadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E9D9F1CEA021D009281B2 /* ReadCache.m */; };
 		5C23E24A1CE1920E0069CF8B /* YiLinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */; };
 		5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF051CE848D500988492 /* PinglunViewController.m */; };
 		5C2DDF171CE9A05200988492 /* MyCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */; };
@@ -61,6 +63,10 @@
 		5C8377001CE30C5C009CCD73 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8376FF1CE30C5C009CCD73 /* CoreDataManager.m */; };
 		5C83772C1CE30D29009CCD73 /* MPSegButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8377291CE30D29009CCD73 /* MPSegButton.m */; };
 		5C83772D1CE30D29009CCD73 /* MPSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C83772B1CE30D29009CCD73 /* MPSegmentedControl.m */; };
+		5C8D06EA1CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06E71CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m */; };
+		5C8D06EB1CEA0FC900873AB7 /* WangqiCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06E91CEA0FC900873AB7 /* WangqiCache.m */; };
+		5C8D06F61CEA213100873AB7 /* GentieCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */; };
+		5C8D06F71CEA213100873AB7 /* GentieCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06F51CEA213100873AB7 /* GentieCache.m */; };
 		5CBD4FAF1CE08A31001270D6 /* aaaaaaaaa.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */; };
 		5CC599A01CC1D4E400C09BE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5999F1CC1D4E400C09BE9 /* main.m */; };
 		5CC599A31CC1D4E400C09BE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC599A21CC1D4E400C09BE9 /* AppDelegate.m */; };
@@ -137,6 +143,10 @@
 		5C00B53B1CC8BCB100FEAA9F /* LaughCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughCell.h; sourceTree = "<group>"; };
 		5C00B53C1CC8BCB100FEAA9F /* LaughCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaughCell.m; sourceTree = "<group>"; };
 		5C00B53D1CC8BCB100FEAA9F /* LaughCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaughCell.xib; sourceTree = "<group>"; };
+		5C1E9D9C1CEA021D009281B2 /* ReadCache+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadCache+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5C1E9D9D1CEA021D009281B2 /* ReadCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ReadCache+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5C1E9D9E1CEA021D009281B2 /* ReadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCache.h; sourceTree = "<group>"; };
+		5C1E9D9F1CEA021D009281B2 /* ReadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCache.m; sourceTree = "<group>"; };
 		5C23E2481CE1920E0069CF8B /* YiLinDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiLinDetailViewController.h; sourceTree = "<group>"; };
 		5C23E2491CE1920E0069CF8B /* YiLinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiLinDetailViewController.m; sourceTree = "<group>"; };
 		5C2DDF041CE848D500988492 /* PinglunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinglunViewController.h; path = Zhitanhui/PinglunViewController.h; sourceTree = "<group>"; };
@@ -176,6 +186,14 @@
 		5C8377291CE30D29009CCD73 /* MPSegButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSegButton.m; sourceTree = "<group>"; };
 		5C83772A1CE30D29009CCD73 /* MPSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSegmentedControl.h; sourceTree = "<group>"; };
 		5C83772B1CE30D29009CCD73 /* MPSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSegmentedControl.m; sourceTree = "<group>"; };
+		5C8D06E61CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WangqiCache+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5C8D06E71CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WangqiCache+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5C8D06E81CEA0FC900873AB7 /* WangqiCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WangqiCache.h; sourceTree = "<group>"; };
+		5C8D06E91CEA0FC900873AB7 /* WangqiCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WangqiCache.m; sourceTree = "<group>"; };
+		5C8D06F21CEA213100873AB7 /* GentieCache+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GentieCache+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GentieCache+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5C8D06F41CEA213100873AB7 /* GentieCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GentieCache.h; sourceTree = "<group>"; };
+		5C8D06F51CEA213100873AB7 /* GentieCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GentieCache.m; sourceTree = "<group>"; };
 		5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aaaaaaaaa.gif; sourceTree = "<group>"; };
 		5CC5999B1CC1D4E400C09BE9 /* Journal_Niu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal_Niu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC5999F1CC1D4E400C09BE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -409,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */,
+				5C8D06E51CEA0FB400873AB7 /* 指谈会 */,
 				5C2DDF221CE9BE9D00988492 /* 诗画话 */,
 				5C2DDF0E1CE966CD00988492 /* YILIN */,
 			);
@@ -433,6 +452,10 @@
 				5C2DDF301CE9D01600988492 /* LaughCache+CoreDataProperties.m */,
 				5C2DDF311CE9D01600988492 /* LaughCache.h */,
 				5C2DDF321CE9D01600988492 /* LaughCache.m */,
+				5C1E9D9C1CEA021D009281B2 /* ReadCache+CoreDataProperties.h */,
+				5C1E9D9D1CEA021D009281B2 /* ReadCache+CoreDataProperties.m */,
+				5C1E9D9E1CEA021D009281B2 /* ReadCache.h */,
+				5C1E9D9F1CEA021D009281B2 /* ReadCache.m */,
 			);
 			name = "诗画话";
 			sourceTree = "<group>";
@@ -531,6 +554,21 @@
 				5C83772B1CE30D29009CCD73 /* MPSegmentedControl.m */,
 			);
 			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		5C8D06E51CEA0FB400873AB7 /* 指谈会 */ = {
+			isa = PBXGroup;
+			children = (
+				5C8D06E61CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.h */,
+				5C8D06E71CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m */,
+				5C8D06E81CEA0FC900873AB7 /* WangqiCache.h */,
+				5C8D06E91CEA0FC900873AB7 /* WangqiCache.m */,
+				5C8D06F21CEA213100873AB7 /* GentieCache+CoreDataProperties.h */,
+				5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */,
+				5C8D06F41CEA213100873AB7 /* GentieCache.h */,
+				5C8D06F51CEA213100873AB7 /* GentieCache.m */,
+			);
+			name = "指谈会";
 			sourceTree = "<group>";
 		};
 		5CC599921CC1D4E400C09BE9 = {
@@ -839,6 +877,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1E9DA01CEA021D009281B2 /* ReadCache+CoreDataProperties.m in Sources */,
 				5C2DDF331CE9D01600988492 /* LaughCache+CoreDataProperties.m in Sources */,
 				5C00B5091CC63F4E00FEAA9F /* GentieModel.m in Sources */,
 				5C69888C1CC1E2CB007734B4 /* SCPopView.m in Sources */,
@@ -851,6 +890,7 @@
 				5C83772D1CE30D29009CCD73 /* MPSegmentedControl.m in Sources */,
 				5C00B4A01CC4EA4800FEAA9F /* RootViewController.m in Sources */,
 				5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */,
+				5C8D06F71CEA213100873AB7 /* GentieCache.m in Sources */,
 				5C00B4B91CC5C49200FEAA9F /* YILINBaseViewController.m in Sources */,
 				5C69888A1CC1E2CB007734B4 /* SCNavTabBarController.m in Sources */,
 				5CD8CA941CC4E53800AB1F92 /* YILINViewController.m in Sources */,
@@ -859,6 +899,7 @@
 				5CD8CA8A1CC4DE7400AB1F92 /* WeiboViewController.m in Sources */,
 				5C00B53E1CC8BCB100FEAA9F /* LaughCell.m in Sources */,
 				5C00B49F1CC4EA4800FEAA9F /* RootNavigationController.m in Sources */,
+				5C1E9DA11CEA021D009281B2 /* ReadCache.m in Sources */,
 				5C00B4C91CC5C54F00FEAA9F /* ArtViewController.m in Sources */,
 				5C8377001CE30C5C009CCD73 /* CoreDataManager.m in Sources */,
 				5C00B4C31CC5C53700FEAA9F /* HorizonViewController.m in Sources */,
@@ -872,6 +913,8 @@
 				5C00B5161CC75FDA00FEAA9F /* RootTableViewCell.m in Sources */,
 				5C69888B1CC1E2CB007734B4 /* SCNavTabBar.m in Sources */,
 				5C83772C1CE30D29009CCD73 /* MPSegButton.m in Sources */,
+				5C8D06EB1CEA0FC900873AB7 /* WangqiCache.m in Sources */,
+				5C8D06F61CEA213100873AB7 /* GentieCache+CoreDataProperties.m in Sources */,
 				5C00B52B1CC87F4100FEAA9F /* ReadModel.m in Sources */,
 				5C00B4C61CC5C54300FEAA9F /* GrowupViewController.m in Sources */,
 				5C2DDF171CE9A05200988492 /* MyCacheData.xcdatamodeld in Sources */,
@@ -883,6 +926,7 @@
 				5C00B4AD1CC4EB8700FEAA9F /* YILINCell.m in Sources */,
 				5C00B50F1CC75D1900FEAA9F /* WangqiViewController.m in Sources */,
 				5CEAB0331CCDEFF500BDC408 /* Reachability.m in Sources */,
+				5C8D06EA1CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m in Sources */,
 				5CD8CA8E1CC4DFE000AB1F92 /* WPAlertView.m in Sources */,
 				5C00B4A31CC4EA5A00FEAA9F /* Model.m in Sources */,
 				5C00B53A1CC8BAA500FEAA9F /* LaughModel.m in Sources */,

@@ -29,7 +29,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-    [self requestData];
 }
 
 - (void)viewDidLoad {
@@ -37,6 +36,7 @@
     // Do any additional setup after loading the view.
     [self initData];
     [self initUI];
+    [self requestData];
 }
 
 - (void)initData {
@@ -51,13 +51,23 @@
     WS(weakSelf);
     [WangqiModel getWangqiDataWithUrlString:PARTICPANCE_URL success:^(WangqiModel *model) {
         
-        _model = model;
-        
-        [weakSelf refreshUI];
+        [weakSelf requestOverWithModel:model];
+        [weakSelf insertWangqiModelToDB:model];
         
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+        
+        NSArray *array = [weakSelf.cdManager searchWangqiModelInDBWithPage:@"0" type:@"zhitanhui"];
+        if (array.count > 1) {
+            [weakSelf requestOverWithModel:array[0]];
+            NSLog(@"%@\n\n\n请求失败时读取缓存:%@",error,array[0]);
+        }
     }];
+}
+
+- (void)requestOverWithModel:(WangqiModel *)model {
+    
+    _model = model;
+    [self refreshUI];
 }
 
 - (void)refreshUI {
@@ -73,6 +83,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Method
+- (void)insertWangqiModelToDB:(WangqiModel *)model {
+    [self.cdManager deleteWangqiModelWithWithPage:@"0" type:@"zhitanhui"];
+    model.page = @"0";
+    model.type = @"zhitanhui";
+    [self.cdManager insertWangqiModelInDB:model];
+}
+
+
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -80,7 +99,6 @@
     if ([segue.identifier isEqualToString:@"gentie"]) {
         GentieViewController *vc = segue.destinationViewController;
         vc.gentie_id = _model.gentie_id;
-        vc.gentie_title = _model.title;
     }
 
 }

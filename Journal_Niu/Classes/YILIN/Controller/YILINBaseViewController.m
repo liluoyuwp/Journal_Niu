@@ -20,7 +20,6 @@
     UITableView *_tableView;
     NSMutableArray *_arrayDS;
     BOOL _isLoadMore;
-    CoreDataManager * _cdManager;
 }
 
 - (void)viewDidLoad {
@@ -40,7 +39,6 @@
     _arrayDS = [NSMutableArray array];
     _page = 0;
     _isLoadMore = NO;
-    _cdManager = [CoreDataManager shareManager];
 }
 
 - (void)initUI {
@@ -63,7 +61,7 @@
         [weakSelf insertYilinModelToDB:array];
     } failure:^(NSError *error) {
         
-        NSArray *array = [_cdManager searchYilinModelInDBWithType:_type withPage:[NSString stringWithFormat:@"%ld",_page]];
+        NSArray *array = [weakSelf.cdManager searchYilinModelInDBWithType:_type withPage:[NSString stringWithFormat:@"%ld",_page]];
         [weakSelf requestOverWithArray:array];
         NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
@@ -134,11 +132,11 @@
 }
 
 - (void)insertYilinModelToDB:(NSArray *)array {
-    [_cdManager deleteYilinModelWithType:_type withPage:[NSString stringWithFormat:@"%ld",_page]];
+    [self.cdManager deleteYilinModelWithType:_type withPage:[NSString stringWithFormat:@"%ld",_page]];
     for (YILINModel *model in array) {
         model.type = _type;
         model.page = [NSString stringWithFormat:@"%ld",_page];
-        [_cdManager insertYilinModelInDB:model];
+        [self.cdManager insertYilinModelInDB:model];
     }
 }
 

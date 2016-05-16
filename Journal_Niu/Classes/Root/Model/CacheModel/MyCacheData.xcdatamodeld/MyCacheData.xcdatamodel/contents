@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="GentieCache" representedClassName="GentieCache" syncable="YES">
+        <attribute name="adddate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gentie_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="page" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="up_times" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="LaughCache" representedClassName="LaughCache" syncable="YES">
         <attribute name="gid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,10 +18,20 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="ReadCache" syncable="YES">
+    <entity name="ReadCache" representedClassName="ReadCache" syncable="YES">
         <attribute name="des" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WangqiCache" representedClassName="WangqiCache" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="count" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gentie_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="page" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="YiLinCache" representedClassName="YiLinCache" syncable="YES">
         <attribute name="des" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,8 +42,10 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="YiLinCache" positionX="-54" positionY="-9" width="128" height="135"/>
         <element name="LaughCache" positionX="-36" positionY="54" width="128" height="150"/>
         <element name="ReadCache" positionX="-18" positionY="99" width="128" height="90"/>
+        <element name="YiLinCache" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="WangqiCache" positionX="-36" positionY="72" width="128" height="165"/>
+        <element name="GentieCache" positionX="-27" positionY="99" width="128" height="150"/>
     </elements>
 </model>

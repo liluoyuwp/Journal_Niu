@@ -11,6 +11,9 @@
 
 @class YILINModel;
 @class LaughModel;
+@class ReadModel;
+@class WangqiModel;
+@class GentieModel;
 
 @interface CoreDataManager : NSObject
 
@@ -56,5 +59,41 @@
 /// 搞笑秀-删
 - (void)deleteLaughModelWithWithPage:(NSString *)page
                                 type:(NSString *)type;
+
+//搞笑秀
+/// 微阅读-增
+- (void)insertReadModelInDB:(ReadModel *)model;
+
+/// 微阅读-查
+- (NSArray *)searchReadModelInDB;
+
+/// 微阅读-删
+- (void)deleteReadModelInDB;
+
+//指谈会
+/// 往期-增
+- (void)insertWangqiModelInDB:(WangqiModel *)model;
+
+/// 往期-查
+- (NSArray *)searchWangqiModelInDBWithPage:(NSString *)page
+                                      type:(NSString *)type;
+
+/// 往期-删
+- (void)deleteWangqiModelWithWithPage:(NSString *)page
+                                 type:(NSString *)type;
+
+//指谈会
+/// 跟帖-增
+- (void)insertGentieModelInDB:(GentieModel *)model;
+
+/// 跟帖-查
+- (NSArray *)searchGentieModelInDBWithPage:(NSString *)page
+                                 gentie_id:(NSString *)gentie_id
+                                      type:(NSString *)type;
+
+/// 跟帖-删
+- (void)deleteGentieModelWithWithPage:(NSString *)page
+                            gentie_id:(NSString *)gentie_id
+                                 type:(NSString *)type;
 
 @end

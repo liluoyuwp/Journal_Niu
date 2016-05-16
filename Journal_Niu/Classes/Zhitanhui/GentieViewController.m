@@ -24,6 +24,7 @@
     BOOL _isLoadMore;
     NSInteger _offset;
     NSString *_urlString;
+    NSString *_type;
 }
 
 - (void)viewDidLoad {
@@ -45,6 +46,7 @@
     _isLoadMore = NO;
     _offset = 0;
     _urlString = PARTICPANCE_COMMENTLIST_URL;
+    _type = @"count";
 }
 
 - (void)initUI {
@@ -66,21 +68,29 @@
     WS(weakSelf);
     [GentieModel getGentieDataWithUrlString:[NSString stringWithFormat:_urlString,self.gentie_id,_offset] success:^(NSArray *array) {
         
-        if (!_isLoadMore) [_arrayDS removeAllObjects];
-        
-        [_arrayDS addObjectsFromArray:array];
-        [_tableView reloadData];
-        
-        [weakSelf hideHUD];
-        [weakSelf endRefresh:_isLoadMore];
+        [weakSelf requestOverWithArray:array];
+        [weakSelf insertGentieModelToDB:array];
+
 
     } failure:^(NSError *error) {
         
-        [weakSelf hideHUD];
-        [weakSelf endRefresh:_isLoadMore];
-        NSLog(@"%@",error);
+        NSArray *array = [weakSelf.cdManager searchGentieModelInDBWithPage:[NSString stringWithFormat:@"%ld",_offset]
+                                                                 gentie_id:_gentie_id
+                                                                      type:_type];
+        [weakSelf requestOverWithArray:array];
+        NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
 }
+
+- (void)requestOverWithArray:(NSArray *)array {
+    if (!_isLoadMore) [_arrayDS removeAllObjects];
+    
+    [_arrayDS addObjectsFromArray:array];
+    [_tableView reloadData];
+    [self hideHUD];
+    [self endRefresh:_isLoadMore];
+}
+
 
 - (void)endRefresh:(BOOL)isLoadMore {
     if (isLoadMore) {
@@ -93,26 +103,17 @@
 - (void)addRefreshAndLoadMore {
     WS(weakSelf);
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf loadNewData];
+        _offset = 0;
+        _isLoadMore = NO;
+        [weakSelf requestData];
     }];
     
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadMoreData];
+        _offset += 15;
+        _isLoadMore = YES;
+        [weakSelf requestData];
     }];
 }
-
-- (void)loadNewData {
-    _offset = 0;
-    _isLoadMore = NO;
-    [self requestData];
-}
-
-- (void)loadMoreData {
-    _offset += 15;
-    _isLoadMore = YES;
-    [self requestData];
-}
-
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -135,8 +136,10 @@
 - (void)segBtnClickWithTitleIndex:(NSInteger)index {
     if (index == 0) {
         _urlString = PARTICPANCE_COMMENTLIST_URL;
+        _type = @"count";
     } else {
         _urlString = PARTICPANCE_COMMENTLIST_TIME_URL;
+        _type = @"time";
     }
     _offset = 0;
     _isLoadMore = NO;
@@ -144,6 +147,18 @@
     [self showHUD];
 }
 
+#pragma mark - Method
+- (void)insertGentieModelToDB:(NSArray *)array {
+    [self.cdManager deleteGentieModelWithWithPage:[NSString stringWithFormat:@"%ld",_offset]
+                                        gentie_id:_gentie_id
+                                             type:_type];
+    for (GentieModel *model in array) {
+        model.page = [NSString stringWithFormat:@"%ld",_offset];
+        model.type = _type;
+        model.gentie_id = self.gentie_id;
+        [self.cdManager insertGentieModelInDB:model];
+    }
+}
 
 #pragma mark - Navigation
 

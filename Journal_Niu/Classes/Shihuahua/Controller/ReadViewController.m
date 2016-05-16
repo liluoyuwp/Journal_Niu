@@ -45,17 +45,26 @@
 - (void)requestData {
     WS(weakSelf);
     [ReadModel getReadDataWithUrlString:KALEIDOSCOPE_MICROREAD_URL success:^(NSArray *array) {
-        [_arrayDS addObjectsFromArray:array];
-        if (_arrayDS.count > 0) {
-            [weakSelf refreshUI];
-        } else {
-            [WPAlertView showAlertWithMessage:@"暂无数据" sureKey:nil];
-        }
+
+        [weakSelf requestOverWithArray:array];
+        [weakSelf insertReadModelToDB:array];
         
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+        
+        NSArray *array = [weakSelf.cdManager searchReadModelInDB];
+        [weakSelf requestOverWithArray:array];
+        NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
 }
+
+- (void)requestOverWithArray:(NSArray *)array {
+    
+    [_arrayDS addObjectsFromArray:array];
+    if (_arrayDS.count > 0) {
+        [self refreshUI];
+    } else {
+        [WPAlertView showAlertWithMessage:@"暂无数据" sureKey:nil];
+    }}
 
 - (void)refreshUI {
     _pageControl.numberOfPages = _arrayDS.count;
@@ -87,6 +96,14 @@
     _titleLabel.text = model.title;
     _textView.text = model.des;
     _pageControl.currentPage = page;
+}
+
+#pragma mark - methods
+- (void)insertReadModelToDB:(NSArray *)array {
+    [self.cdManager deleteReadModelInDB];
+    for (ReadModel *model in array) {
+        [self.cdManager insertReadModelInDB:model];
+    }
 }
 
 @end

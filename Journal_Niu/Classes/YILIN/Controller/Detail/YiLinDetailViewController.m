@@ -41,7 +41,7 @@
 }
 
 - (void)initUI {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"＜返回" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonPopBack)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"＜" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonPopBack)];
     self.navigationItem.title = @"意林";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonShare)];
     

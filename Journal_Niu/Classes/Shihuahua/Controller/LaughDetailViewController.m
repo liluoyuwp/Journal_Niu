@@ -13,6 +13,7 @@
 @interface LaughDetailViewController ()<UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *xiazaiBtn;
 
 @end
 
@@ -93,21 +94,17 @@
 -(void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void *)contextInfo {
     
     if(!error){
+        self.xiazaiBtn.enabled = NO;
         NSLog(@"savesuccess");
     }else{
         [WPAlertView showAlertWithTitle:@"" message:@"若继续,请授权访问相机" sureKey:^{
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"prefs:root=Privacy"]]) {
                 
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=Privacy"]];///开启手机系统设置，授权访问相册
-            }
+                //开启手机系统设置，授权访问相册
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=Privacy"]];            }
         } cancelKey:nil];
     }
 }
-
-- (IBAction)fenxiang:(id)sender {
-    NSLog(@"分享");
-}
-
 
 -(void)showImage:(UIImage *)image{
     

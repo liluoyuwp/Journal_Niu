@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class YILINModel;
+@class LaughModel;
+
 @interface CoreDataManager : NSObject
 
 #pragma mark - 系统生成
@@ -28,5 +31,30 @@
 #pragma mark- 我的添加
 // 单例管理类对象
 + (CoreDataManager *)shareManager;
+
+
+//YiLin
+/// yilin模块-增.
+- (void)insertYilinModelInDB:(YILINModel *)model;
+
+/// yilin模块-查.
+- (NSArray *)searchYilinModelInDBWithType:(NSString *)type
+                                 withPage:(NSString *)page;
+
+/// yilin模块-删
+- (void)deleteYilinModelWithType:(NSString *)type
+                        withPage:(NSString *)page;
+
+//搞笑秀
+/// 搞笑秀-增
+- (void)insertLaughModelInDB:(LaughModel *)model;
+
+/// 搞笑秀-查
+- (NSArray *)searchLaughModelInDBWithPage:(NSString *)page
+                                     type:(NSString *)type;
+
+/// 搞笑秀-删
+- (void)deleteLaughModelWithWithPage:(NSString *)page
+                                type:(NSString *)type;
 
 @end

@@ -12,6 +12,7 @@
 #import "MJRefresh.h"
 #import "WPAlertView.h"
 #import "MBProgressHUD.h"
+#import "CoreDataManager.h"
 
 @interface RootViewController : UIViewController
 

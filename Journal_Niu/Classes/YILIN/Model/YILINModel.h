@@ -23,7 +23,7 @@
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *detail_id;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *page;
 
 + (void)getYILINDataWithRrlString:(NSString *)urlString

@@ -23,6 +23,8 @@
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *width;
+@property (nonatomic, copy) NSString *page;
+@property (nonatomic, copy) NSString *type;
 
 + (void)getLaughDataWithUrlString:(NSString *)urlString
                           success:(void (^)(NSArray *array))success

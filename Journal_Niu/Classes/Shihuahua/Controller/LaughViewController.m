@@ -22,6 +22,7 @@
     NSMutableArray *_arrayDS;
     BOOL _isLoadMore;
     NSInteger _offset;
+    CoreDataManager * _cdManager;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,6 +54,7 @@
     _arrayDS = [NSMutableArray array];
     _isLoadMore = NO;
     _offset = 0;
+    _cdManager = [CoreDataManager shareManager];
 }
 
 - (void)initUI {
@@ -65,17 +67,23 @@
     WS(weakSelf);
     [LaughModel getLaughDataWithUrlString:[NSString stringWithFormat:KALEIDOSCOPE_LAUGH_URL, _offset] success:^(NSArray *array) {
         
-        if (!_isLoadMore) [_arrayDS removeAllObjects];
-        
-        [weakSelf endRefresh:_isLoadMore];
-        [_arrayDS addObjectsFromArray:array];
-        [_tableView reloadData];
+        [weakSelf requestOverWithArray:array];
+        [weakSelf insertLaughModelToDB:array];
         
     } failure:^(NSError *error) {
         
-        [weakSelf endRefresh:_isLoadMore];
-        NSLog(@"%@",error);
+        NSArray *array = [_cdManager searchLaughModelInDBWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"laugh"];
+        [weakSelf requestOverWithArray:array];
+        NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
+}
+
+- (void)requestOverWithArray:(NSArray *)array {
+    if (!_isLoadMore) [_arrayDS removeAllObjects];
+    
+    [_arrayDS addObjectsFromArray:array];
+    [_tableView reloadData];
+    [self endRefresh:_isLoadMore];
 }
 
 - (void)endRefresh:(BOOL)isLoadMore {
@@ -89,24 +97,16 @@
 - (void)addRefreshAndLoadMore {
     WS(weakSelf);
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf loadNewData];
+        _offset = 0;
+        _isLoadMore = NO;
+        [weakSelf requestData];
     }];
     
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadMoreData];
+        _offset += 10;
+        _isLoadMore = YES;
+        [weakSelf requestData];
     }];
-}
-
-- (void)loadNewData {
-    _offset = 0;
-    _isLoadMore = NO;
-    [self requestData];
-}
-
-- (void)loadMoreData {
-    _offset += 10;
-    _isLoadMore = YES;
-    [self requestData];
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
@@ -142,10 +142,17 @@
     [self.navigationController pushViewController:laughDetailVC animated:NO];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Method
+- (void)insertLaughModelToDB:(NSArray *)array {
+    [_cdManager deleteLaughModelWithWithPage:[NSString stringWithFormat:@"%ld",_offset] type:@"laugh"];
+    for (LaughModel *model in array) {
+        model.page = [NSString stringWithFormat:@"%ld",_offset];
+        model.type = @"laugh";
+        [_cdManager insertLaughModelInDB:model];
+    }
 }
+
 
 /*
 #pragma mark - Navigation

@@ -10,7 +10,6 @@
 #import "YILINCell.h"
 #import "YILINModel.h"
 #import "YiLinDetailViewController.h"
-#import "CoreDataManager.h"
 
 @interface YILINBaseViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -21,6 +20,7 @@
     UITableView *_tableView;
     NSMutableArray *_arrayDS;
     BOOL _isLoadMore;
+    CoreDataManager * _cdManager;
 }
 
 - (void)viewDidLoad {
@@ -30,7 +30,6 @@
     [self initUI];
     [self requestData];
     [self addRefreshAndLoadMore];
-    [CoreDataManager shareManager];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -41,6 +40,7 @@
     _arrayDS = [NSMutableArray array];
     _page = 0;
     _isLoadMore = NO;
+    _cdManager = [CoreDataManager shareManager];
 }
 
 - (void)initUI {
@@ -59,16 +59,22 @@
     WS(weakSelf);
     [YILINModel getYILINDataWithRrlString:[self getRequestUrl] success:^(NSArray *array) {
         
-        if (!_isLoadMore) [_arrayDS removeAllObjects];
-        
-        [weakSelf endRefresh:_isLoadMore];
-        [_arrayDS addObjectsFromArray:array];
-        [_tableView reloadData];
+        [weakSelf requestOverWithArray:array];
+        [weakSelf insertYilinModelToDB:array];
     } failure:^(NSError *error) {
         
-        [weakSelf endRefresh:_isLoadMore];
-        NSLog(@"%@",error);
+        NSArray *array = [_cdManager searchYilinModelInDBWithType:_type withPage:[NSString stringWithFormat:@"%ld",_page]];
+        [weakSelf requestOverWithArray:array];
+        NSLog(@"%@\n\n\n请求失败时读取缓存:%ld",error,array.count);
     }];
+}
+
+- (void)requestOverWithArray:(NSArray *)array {
+    if (!_isLoadMore) [_arrayDS removeAllObjects];
+    
+    [_arrayDS addObjectsFromArray:array];
+    [_tableView reloadData];
+    [self endRefresh:_isLoadMore];
 }
 
 - (void)endRefresh:(BOOL)isLoadMore {
@@ -82,24 +88,16 @@
 - (void)addRefreshAndLoadMore {
     WS(weakSelf);
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf loadNewData];
+        _page = 0;
+        _isLoadMore = NO;
+        [weakSelf requestData];
     }];
     
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadMoreData];
+        _page += 15;
+        _isLoadMore = YES;
+        [weakSelf requestData];
     }];
-}
-
-- (void)loadNewData {
-    _page = 0;
-    _isLoadMore = NO;
-    [self requestData];
-}
-
-- (void)loadMoreData {
-    _page += 15;
-    _isLoadMore = YES;
-    [self requestData];
 }
 
 #pragma mark - UITableViewDataSource && UITableViewDelegate
@@ -133,6 +131,15 @@
 #pragma mark - Method
 - (NSString *)getRequestUrl {
     return nil;
+}
+
+- (void)insertYilinModelToDB:(NSArray *)array {
+    [_cdManager deleteYilinModelWithType:_type withPage:[NSString stringWithFormat:@"%ld",_page]];
+    for (YILINModel *model in array) {
+        model.type = _type;
+        model.page = [NSString stringWithFormat:@"%ld",_page];
+        [_cdManager insertYilinModelInDB:model];
+    }
 }
 
 @end

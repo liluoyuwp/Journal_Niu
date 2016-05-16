@@ -39,7 +39,7 @@
 }
 
 - (void)initUI {
-    
+    self.view.hidden = YES;
 }
 
 - (void)requestData {
@@ -74,6 +74,7 @@
         [imageView sd_setImageWithURL:[NSURL URLWithString:model.icon] placeholderImage:[UIImage imageNamed:@"缺省图"]];
         [_scrollView addSubview:imageView];
     }
+    self.view.hidden = NO;
 }
 
 #pragma mark - UIScrollDelegate
@@ -86,11 +87,6 @@
     _titleLabel.text = model.title;
     _textView.text = model.des;
     _pageControl.currentPage = page;
-}
-
-#pragma mark - method
-- (IBAction)fenxiang:(id)sender {
-    NSLog(@"分享");
 }
 
 @end

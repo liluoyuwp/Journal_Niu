@@ -42,6 +42,8 @@
 		5C2DDF171CE9A05200988492 /* MyCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */; };
 		5C2DDF1C1CE9A41300988492 /* YiLinCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF191CE9A41300988492 /* YiLinCache+CoreDataProperties.m */; };
 		5C2DDF1D1CE9A41300988492 /* YiLinCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF1B1CE9A41300988492 /* YiLinCache.m */; };
+		5C2DDF331CE9D01600988492 /* LaughCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF301CE9D01600988492 /* LaughCache+CoreDataProperties.m */; };
+		5C2DDF341CE9D01600988492 /* LaughCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF321CE9D01600988492 /* LaughCache.m */; };
 		5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A0D1CC9F992001614BB /* ImagesModel.m */; };
 		5C451A161CCA0F8D001614BB /* LaughDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A151CCA0F8D001614BB /* LaughDetailViewController.m */; };
 		5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6988801CC1E2CB007734B4 /* SCNavTabBar.bundle */; };
@@ -144,6 +146,10 @@
 		5C2DDF191CE9A41300988492 /* YiLinCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YiLinCache+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5C2DDF1A1CE9A41300988492 /* YiLinCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiLinCache.h; sourceTree = "<group>"; };
 		5C2DDF1B1CE9A41300988492 /* YiLinCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiLinCache.m; sourceTree = "<group>"; };
+		5C2DDF2F1CE9D01600988492 /* LaughCache+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LaughCache+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5C2DDF301CE9D01600988492 /* LaughCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LaughCache+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5C2DDF311CE9D01600988492 /* LaughCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughCache.h; sourceTree = "<group>"; };
+		5C2DDF321CE9D01600988492 /* LaughCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaughCache.m; sourceTree = "<group>"; };
 		5C451A0C1CC9F992001614BB /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
 		5C451A0D1CC9F992001614BB /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		5C451A141CCA0F8D001614BB /* LaughDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughDetailViewController.h; sourceTree = "<group>"; };
@@ -403,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				5C2DDF151CE9A05200988492 /* MyCacheData.xcdatamodeld */,
+				5C2DDF221CE9BE9D00988492 /* 诗画话 */,
 				5C2DDF0E1CE966CD00988492 /* YILIN */,
 			);
 			path = CacheModel;
@@ -417,6 +424,17 @@
 				5C2DDF1B1CE9A41300988492 /* YiLinCache.m */,
 			);
 			name = YILIN;
+			sourceTree = "<group>";
+		};
+		5C2DDF221CE9BE9D00988492 /* 诗画话 */ = {
+			isa = PBXGroup;
+			children = (
+				5C2DDF2F1CE9D01600988492 /* LaughCache+CoreDataProperties.h */,
+				5C2DDF301CE9D01600988492 /* LaughCache+CoreDataProperties.m */,
+				5C2DDF311CE9D01600988492 /* LaughCache.h */,
+				5C2DDF321CE9D01600988492 /* LaughCache.m */,
+			);
+			name = "诗画话";
 			sourceTree = "<group>";
 		};
 		5C69887C1CC1E02D007734B4 /* Resource */ = {
@@ -821,6 +839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2DDF331CE9D01600988492 /* LaughCache+CoreDataProperties.m in Sources */,
 				5C00B5091CC63F4E00FEAA9F /* GentieModel.m in Sources */,
 				5C69888C1CC1E2CB007734B4 /* SCPopView.m in Sources */,
 				5CEAB0341CCDEFF500BDC408 /* Util.m in Sources */,
@@ -836,6 +855,7 @@
 				5C69888A1CC1E2CB007734B4 /* SCNavTabBarController.m in Sources */,
 				5CD8CA941CC4E53800AB1F92 /* YILINViewController.m in Sources */,
 				5CC5AB8A1CD87F8400C221B0 /* AppTool.m in Sources */,
+				5C2DDF341CE9D01600988492 /* LaughCache.m in Sources */,
 				5CD8CA8A1CC4DE7400AB1F92 /* WeiboViewController.m in Sources */,
 				5C00B53E1CC8BCB100FEAA9F /* LaughCell.m in Sources */,
 				5C00B49F1CC4EA4800FEAA9F /* RootNavigationController.m in Sources */,

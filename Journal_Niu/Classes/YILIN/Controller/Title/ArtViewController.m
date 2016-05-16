@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         self.urlString = [NSString stringWithFormat:YILIN_ART_URL,(NSInteger)0];
+        self.type = YILIN_WEIYIZHI;
     }
     return self;
 }

@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         self.urlString = [NSString stringWithFormat:YILIN_GROWUP_URL,(NSInteger)0];
+        self.type = YILIN_CHENGZHANG;
     }
     return self;
 }

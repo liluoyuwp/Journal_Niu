@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSString *urlString;
 @property (nonatomic, assign) NSInteger page;
+@property (nonatomic, copy) NSString *type;
 
 - (NSString *)getRequestUrl;
 

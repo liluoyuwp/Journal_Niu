@@ -8,6 +8,11 @@
 
 #import "CoreDataManager.h"
 
+#import "YiLinCache.h"
+#import "YILINModel.h"
+
+#define TABLE_NAME_YILIN @"YiLinCache" //表名
+
 @implementation CoreDataManager
 
 #pragma mark - 系统生成
@@ -122,6 +127,91 @@
         _managedObjectContext = [self managedObjectContext];
     }
     return self;
+}
+
+- (void)insertModelToDB:(YILINModel *)model {
+    YiLinCache *app = (id)[NSEntityDescription insertNewObjectForEntityForName:TABLE_NAME_YILIN inManagedObjectContext:_managedObjectContext];
+    
+    //设置需要插入的字段属性
+    app.icon = model.icon;
+    app.des = model.des;
+    app.title = model.title;
+    app.page = model.page;
+    app.journal_id = model.detail_id;
+    app.category = model.category;
+    
+    NSError * error = nil;
+    BOOL success = [_managedObjectContext save:&error];
+    if (!success) {
+        [NSException raise:@"访问数据库错误" format:@"%@",[error localizedDescription]];
+    }
+    
+}
+
+- (NSArray *)searchModelInDBWithCategory:(NSString *)category withPage:(NSString *)page {
+    //初始化一个查询请求
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    //设置查询的实体
+    request.entity = [NSEntityDescription entityForName:TABLE_NAME_YILIN inManagedObjectContext:_managedObjectContext];
+    
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"page = %@ and category = %@",page,category];
+    request.predicate = predicate;
+    
+    NSError * error = nil;
+    NSArray * arrayResult = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        [NSException raise:@"查询错误" format:@"%@",[error localizedDescription]];
+    }
+    return arrayResult;
+}
+
+
+//删
+- (void)deleteModel:(YILINModel *)model
+{
+    //首先需要建立一个request
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    //去哪个数据库的哪个表里面找
+    [request setEntity:[NSEntityDescription entityForName:TABLE_NAME_YILIN inManagedObjectContext:[CoreDataManager shareManager].managedObjectContext]];
+    //查询条件 具体参考官方文档
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"id = %@",model.detail_id];
+    [request setPredicate:predicate];
+    
+    NSError * error = nil;
+    NSArray * result = [_managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (YiLinCache *cache in result) {
+        [_managedObjectContext deleteObject:cache];
+    }
+    
+    //保存
+    NSError * error2 = nil;
+    [_managedObjectContext save:&error2];
+    if (error2) {
+        [NSException raise:@"删除错误" format:@"%@",[error2 localizedDescription]];
+    }
+}
+
+//改
+- (void)updateModel:(YILINModel *)model
+{
+    //首先需要建立一个request
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    //去哪个数据库的哪个表里面找
+    [request setEntity:[NSEntityDescription entityForName:TABLE_NAME_YILIN inManagedObjectContext:[CoreDataManager shareManager].managedObjectContext]];
+    //查询条件 具体参考官方文档
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"id = %@",model.detail_id];
+    [request setPredicate:predicate];
+    
+    NSError * error = nil;
+    NSArray * result = [_managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (YiLinCache *cache in result) {
+        cache.title = model.title;
+    }
+    
+    //保存
+    [self saveContext];
 }
 
 

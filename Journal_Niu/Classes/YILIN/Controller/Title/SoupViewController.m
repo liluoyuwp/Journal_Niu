@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         self.urlString = [NSString stringWithFormat:YILIN_SOUP_URL,self.page];
+        self.type = YILIN_XINLING;
     }
     return self;
 }

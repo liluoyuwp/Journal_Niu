@@ -37,6 +37,38 @@
 #define UMSOCIAL_KEY @"5732a1d8e0f55a5c95002bf5"
 
 
+// 意林 最新
+#define YILIN_ZUIXIN @"yilin_zuixin"
+
+// 意林 心灵鸡汤
+#define YILIN_XINLING @"yilin_xinling"
+
+// 意林 视界
+#define YILIN_SHIJIE @"yilin_shijie"
+
+// 意林 成长
+#define YILIN_CHENGZHANG @"yilin_chengzhang"
+
+// 意林 文艺志
+#define YILIN_WEIYIZHI @"yilin_wenyizhi"
+
+// 意林 乐活
+#define YILIN_LEHUO @"yilin_lehuo"
+
+// 诗画话 搞笑秀
+#define SHIHUAHUA_LAUGH @"shihuahua_laugh"
+
+// 诗画话 微阅读
+#define SHIHUAHUA_READ @"shihuahua_read"
+
+// 指谈会 首页
+#define ZHITANHUI_SHOUYE @"zhitanhui_shouye"
+
+// 指谈会 跟帖
+#define ZHITANHUI_GENTIE @"zhitanhui_gentie"
+
+// 指谈会 往期
+#define ZHITANHUI_WANGQI @"zhitanhui_wangqi"
 
 
 

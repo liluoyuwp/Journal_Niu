@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         self.urlString = [NSString stringWithFormat:YILIN_LIFE_URL,(NSInteger)0];
+        self.type = YILIN_LEHUO;
     }
     return self;
 }

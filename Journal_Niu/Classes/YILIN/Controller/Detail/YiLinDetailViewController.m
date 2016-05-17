@@ -29,7 +29,7 @@
     urlCache.isCache = YES;
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
     urlCache.isCache = NO;

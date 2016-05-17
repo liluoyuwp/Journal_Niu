@@ -48,6 +48,7 @@
 		5C2DDF341CE9D01600988492 /* LaughCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF321CE9D01600988492 /* LaughCache.m */; };
 		5C2DDF381CEAA86A00988492 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF371CEAA86A00988492 /* SettingViewController.m */; };
 		5C2DDF3B1CEABF7E00988492 /* ShoucangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF3A1CEABF7E00988492 /* ShoucangViewController.m */; };
+		5C2DDF6C1CEB01EC00988492 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDF6E1CEB01EC00988492 /* InfoPlist.strings */; };
 		5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A0D1CC9F992001614BB /* ImagesModel.m */; };
 		5C451A161CCA0F8D001614BB /* LaughDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A151CCA0F8D001614BB /* LaughDetailViewController.m */; };
 		5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6988801CC1E2CB007734B4 /* SCNavTabBar.bundle */; };
@@ -165,6 +166,11 @@
 		5C2DDF371CEAA86A00988492 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		5C2DDF391CEABF7E00988492 /* ShoucangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoucangViewController.h; sourceTree = "<group>"; };
 		5C2DDF3A1CEABF7E00988492 /* ShoucangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoucangViewController.m; sourceTree = "<group>"; };
+		5C2DDF6D1CEB01EC00988492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C2DDF6F1CEB01FA00988492 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C2DDF701CEB022000988492 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5C2DDF711CEB022000988492 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5C2DDF721CEB022000988492 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5C451A0C1CC9F992001614BB /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
 		5C451A0D1CC9F992001614BB /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		5C451A141CCA0F8D001614BB /* LaughDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughDetailViewController.h; sourceTree = "<group>"; };
@@ -548,6 +554,7 @@
 			children = (
 				5CC599AC1CC1D4E400C09BE9 /* LaunchScreen.storyboard */,
 				5CC599AF1CC1D4E400C09BE9 /* Info.plist */,
+				5C2DDF6E1CEB01EC00988492 /* InfoPlist.strings */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -800,6 +807,7 @@
 				TargetAttributes = {
 					5CC5999A1CC1D4E400C09BE9 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6DHYQB3CFP;
 					};
 				};
 			};
@@ -810,6 +818,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5CC599921CC1D4E400C09BE9;
 			productRefGroup = 5CC5999C1CC1D4E400C09BE9 /* Products */;
@@ -833,6 +842,7 @@
 				5CC599AB1CC1D4E400C09BE9 /* Assets.xcassets in Resources */,
 				5C00B4AE1CC4EB8700FEAA9F /* YILINCell.xib in Resources */,
 				5CC599A91CC1D4E400C09BE9 /* Main.storyboard in Resources */,
+				5C2DDF6C1CEB01EC00988492 /* InfoPlist.strings in Resources */,
 				5C00B53F1CC8BCB100FEAA9F /* LaughCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -957,10 +967,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5C2DDF6E1CEB01EC00988492 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2DDF6D1CEB01EC00988492 /* Base */,
+				5C2DDF6F1CEB01FA00988492 /* en */,
+				5C2DDF721CEB022000988492 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5CC599A71CC1D4E400C09BE9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5CC599A81CC1D4E400C09BE9 /* Base */,
+				5C2DDF701CEB022000988492 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -969,6 +990,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5CC599AD1CC1D4E400C09BE9 /* Base */,
+				5C2DDF711CEB022000988492 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ../..;
@@ -1064,6 +1086,7 @@
 			baseConfigurationReference = 368E5836DAE4B8222D483F23 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1087,7 +1110,7 @@
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/Whatsapp",
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "yangyang.niu.Journal-Niu";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.juranHomeDesignerAppstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1097,6 +1120,8 @@
 			baseConfigurationReference = 1BDBE7C9BFCC5893DC5FAC67 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Easyhome E-commerce Co., Ltd.";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1120,7 +1145,7 @@
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/Whatsapp",
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "yangyang.niu.Journal-Niu";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.juranHomeDesignerAppstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

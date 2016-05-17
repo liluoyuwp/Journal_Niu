@@ -1,0 +1,90 @@
+
+/* Class = "UILabel"; text = "政协委员"; ObjectID = "0qE-dJ-Haf"; */
+"0qE-dJ-Haf.text" = "政协委员";
+
+/* Class = "UIButton"; highlightedTitle = "收藏"; ObjectID = "5HC-io-Ni3"; */
+"5HC-io-Ni3.highlightedTitle" = "收藏";
+
+/* Class = "UIButton"; normalTitle = "收藏"; ObjectID = "5HC-io-Ni3"; */
+"5HC-io-Ni3.normalTitle" = "收藏";
+
+/* Class = "UIBarButtonItem"; title = "<"; ObjectID = "5bm-hh-76p"; */
+"5bm-hh-76p.title" = "<";
+
+/* Class = "UINavigationItem"; title = "诗画话"; ObjectID = "5c1-Ai-yEZ"; */
+"5c1-Ai-yEZ.title" = "诗画话";
+
+/* Class = "UINavigationItem"; title = "跟帖"; ObjectID = "AuL-vI-RER"; */
+"AuL-vI-RER.title" = "跟帖";
+
+/* Class = "UIButton"; normalTitle = "收藏"; ObjectID = "BLA-gH-Jv4"; */
+"BLA-gH-Jv4.normalTitle" = "收藏";
+
+/* Class = "UIButton"; selectedTitle = "已收藏"; ObjectID = "BLA-gH-Jv4"; */
+"BLA-gH-Jv4.selectedTitle" = "已收藏";
+
+/* Class = "UIBarButtonItem"; title = "发送"; ObjectID = "CFK-0n-vjt"; */
+"CFK-0n-vjt.title" = "发送";
+
+/* Class = "UITabBarItem"; title = "微博"; ObjectID = "DHJ-cE-KnM"; */
+"DHJ-cE-KnM.title" = "微博";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "Dr6-tl-EfI"; */
+"Dr6-tl-EfI.title" = "设置";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "; ObjectID = "Ff4-vu-7c5"; */
+"Ff4-vu-7c5.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "H0f-4Q-npL"; */
+"H0f-4Q-npL.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "微博"; ObjectID = "JSO-6T-aI0"; */
+"JSO-6T-aI0.title" = "微博";
+
+/* Class = "UITabBarItem"; title = "指谈会"; ObjectID = "Md5-pQ-Hlv"; */
+"Md5-pQ-Hlv.title" = "指谈会";
+
+/* Class = "UINavigationItem"; title = "指谈会"; ObjectID = "UVR-WR-vc1"; */
+"UVR-WR-vc1.title" = "指谈会";
+
+/* Class = "UIButton"; normalTitle = "跟帖"; ObjectID = "VTP-t0-zAz"; */
+"VTP-t0-zAz.normalTitle" = "跟帖";
+
+/* Class = "UIButton"; normalTitle = "清除缓存"; ObjectID = "YLH-eN-MY3"; */
+"YLH-eN-MY3.normalTitle" = "清除缓存";
+
+/* Class = "UINavigationItem"; title = "收藏"; ObjectID = "eCT-YQ-NV2"; */
+"eCT-YQ-NV2.title" = "收藏";
+
+/* Class = "UIBarButtonItem"; title = "评论"; ObjectID = "fB6-nA-FN4"; */
+"fB6-nA-FN4.title" = "评论";
+
+/* Class = "UIButton"; normalTitle = "下载"; ObjectID = "fjY-rM-loo"; */
+"fjY-rM-loo.normalTitle" = "下载";
+
+/* Class = "UINavigationItem"; title = "评论"; ObjectID = "jXC-9t-5pR"; */
+"jXC-9t-5pR.title" = "评论";
+
+/* Class = "UIButton"; normalTitle = "往期"; ObjectID = "kGb-0O-W1e"; */
+"kGb-0O-W1e.normalTitle" = "往期";
+
+/* Class = "UIButton"; normalTitle = "收藏"; ObjectID = "qC0-pn-BqO"; */
+"qC0-pn-BqO.normalTitle" = "收藏";
+
+/* Class = "UIButton"; selectedTitle = "已收藏"; ObjectID = "qC0-pn-BqO"; */
+"qC0-pn-BqO.selectedTitle" = "已收藏";
+
+/* Class = "UINavigationItem"; title = "往期"; ObjectID = "rQN-ny-XIj"; */
+"rQN-ny-XIj.title" = "往期";
+
+/* Class = "UITabBarItem"; title = "意林"; ObjectID = "rVs-Mm-nmu"; */
+"rVs-Mm-nmu.title" = "意林";
+
+/* Class = "UITabBarItem"; title = "诗画话"; ObjectID = "tiK-ND-Egp"; */
+"tiK-ND-Egp.title" = "诗画话";
+
+/* Class = "UINavigationItem"; title = "意林"; ObjectID = "v0m-vb-2JU"; */
+"v0m-vb-2JU.title" = "意林";
+
+/* Class = "UITextView"; text = "详情"; ObjectID = "vrY-cF-ryD"; */
+"vrY-cF-ryD.text" = "详情";

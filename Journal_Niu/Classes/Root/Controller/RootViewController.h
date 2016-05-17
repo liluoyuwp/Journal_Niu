@@ -24,4 +24,6 @@
 
 - (void)hideHUD;
 
+- (void)barButtonPopBack;
+
 @end

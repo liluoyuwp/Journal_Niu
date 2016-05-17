@@ -18,6 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.cdManager = [CoreDataManager shareManager];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"＜" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonPopBack)];
+}
+
+- (void)barButtonPopBack {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (id)initViewControllerWithStoryBoardID:(NSString *)storyBoard_id {

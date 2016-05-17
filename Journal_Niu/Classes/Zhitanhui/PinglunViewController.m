@@ -58,12 +58,13 @@
     return YES;
 }
 
-#pragma mark - bar button actions.
-- (IBAction)dismissPinglunControllerView:(id)sender {
+#pragma mark - dismiss
+- (void)barButtonPopBack {
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - bar button actions.
 - (IBAction)pinglunButton:(id)sender {
     
     if (self.textView.text.length > 140) {
@@ -83,7 +84,7 @@
         
         if ([dict isKindOfClass:[NSDictionary class]]) {
             [WPAlertView showAlertWithMessage:dict[@"msg"] sureKey:^{
-                [weakSelf dismissPinglunControllerView:nil];
+                [weakSelf barButtonPopBack];
             }];
         }
         

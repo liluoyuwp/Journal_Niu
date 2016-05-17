@@ -44,6 +44,7 @@
 }
 
 - (void)initUI {
+    self.navigationItem.leftBarButtonItem.title = @"";
     self.view.hidden = YES;
 }
 

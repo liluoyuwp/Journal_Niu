@@ -9,8 +9,10 @@
 #import "YiLinDetailViewController.h"
 #import "CustomURLCache.h"
 #import "AppTool.h"
+#import "GentieViewController.h"
 
 @interface YiLinDetailViewController ()<UIWebViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *shoucangBtn;
 
 @end
@@ -21,12 +23,22 @@
     NSMutableURLRequest *_request;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
+    urlCache.isCache = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
+    urlCache.isCache = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self initCache];
-
     [self initUI];
 
     [self showHUD];
@@ -36,15 +48,9 @@
     [self updateShoucangBtn];
 }
 
-- (void)initCache {
-    CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
-    urlCache.isCache = YES;
-}
-
 - (void)initUI {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"＜" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonPopBack)];
-    self.navigationItem.title = @"意林";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonShare)];
+    self.navigationItem.title = _text;
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tabBarController.tabBar.hidden = YES;
@@ -66,7 +72,7 @@
     }
 }
 
-#pragma mark - 收藏按钮
+#pragma mark - 底部按钮
 - (IBAction)shoucangBtnClick:(UIButton *)sender {
     WS(weakSelf);
     if (sender.selected) {
@@ -80,6 +86,19 @@
     }
 }
 
+- (IBAction)pinglunBtn:(id)sender {
+    GentieViewController *vc = (id)[self initViewControllerWithStoryBoardID:@"gentie"];
+    vc.gentie_id = self.yiLinDetail_id;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)shareBtn:(id)sender {
+    [AppTool shareInViewController:self
+                              text:_text
+                             image:_image
+                          detailID:_yiLinDetail_id];
+}
+
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [_webView.scrollView.mj_header endRefreshing];
@@ -90,21 +109,6 @@
     [_webView.scrollView.mj_header endRefreshing];
     [self hideHUD];
     NSLog(@"%@",error);
-}
-
-#pragma mark - bar button actions.
-- (void)barButtonShare {
-    
-    [AppTool shareInViewController:self
-                              text:_text
-                             image:_image
-                          detailID:_yiLinDetail_id];
-}
-
-- (void)barButtonPopBack {
-    CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
-    urlCache.isCache = NO;
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

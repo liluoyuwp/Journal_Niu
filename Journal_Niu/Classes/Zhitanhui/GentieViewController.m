@@ -127,11 +127,6 @@
     return cell;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - MPSegmentedControlDelegate
 - (void)segBtnClickWithTitleIndex:(NSInteger)index {
     if (index == 0) {

@@ -121,6 +121,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     LaughModel *model = _arrayDS[indexPath.row];
+    
+    if (model.width == nil ||
+        [model.width isKindOfClass:[NSNull class]] ||
+        [[model.width description] rangeOfString:@"null"].length == 4 ||
+        model.height == nil ||
+        [model.height isKindOfClass:[NSNull class]] ||
+        [[model.height description] rangeOfString:@"null"].length == 4) {
+        return 250.78f;
+    }
+    
     CGFloat width = [model.width floatValue];
     CGFloat height = [model.height floatValue];
     height = height / (width / SCREEN_WIDTH);

@@ -24,6 +24,14 @@
 /// weak block typeof.
 #define WS(weakSelf)  __weak __block __typeof(&*self)weakSelf = self;   //!< WS(weakSelf) self in block.
 
+/// 获得 主线程
+#define d1ispatch_async_get_main_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+
 /// RGB
 #define COLOR(R, G, B, A) [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:(A)]
 

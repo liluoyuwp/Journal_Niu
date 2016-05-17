@@ -111,6 +111,9 @@
     hud.mode = MBProgressHUDModeCustomView;
     hud.labelText = @"成功";
     [hud hide:YES afterDelay:1];
+    
+    _cacheStr = @"0.0M";
+    [self updateCacheSize];
 }
 
 - (void)clearCacheFinder {
@@ -119,8 +122,6 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:cachePath]) {
 
         [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
-        _cacheStr = @"0.0M";
-        [self updateCacheSize];
     }
 }
 

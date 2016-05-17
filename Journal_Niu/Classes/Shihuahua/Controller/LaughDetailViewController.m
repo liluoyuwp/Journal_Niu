@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *xiazaiBtn;
+@property (weak, nonatomic) IBOutlet UIButton *shoucangBtn;
 
 @end
 
@@ -32,6 +33,8 @@
     [self initUI];
     
     [self requestData];
+    
+    [self updateShoucangBtn];
 }
 
 - (void)initData {
@@ -39,6 +42,11 @@
 }
 
 - (void)initUI {
+    self.shoucangBtn.clipsToBounds = YES;
+    self.shoucangBtn.layer.cornerRadius = 4.5f;
+    self.xiazaiBtn.clipsToBounds = YES;
+    self.xiazaiBtn.layer.cornerRadius = 4.5f;
+    
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBarHidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -68,6 +76,13 @@
     }];
 }
 
+- (void)updateShoucangBtn {
+    id obj = [self.cdManager searchShoucangModelInDBWithtype:@"shoucang_laugh" shoucang_id:_detail_id];
+    if (![obj isKindOfClass:[NSString class]]) {
+        self.shoucangBtn.selected = YES;
+    }
+}
+
 - (void)refreshLaughDetailUI {
     WS(weakSelf);
     [_imageView sd_setImageWithURL:[NSURL URLWithString:_model.icon]
@@ -82,20 +97,29 @@
 }
 
 #pragma mark - button method
-- (IBAction)shoucang:(id)sender {
-    NSLog(@"收藏");
-}
+- (IBAction)shoucang:(UIButton *)sender {
+    WS(weakSelf);
+    if (sender.selected) {
+        [WPAlertView showAlertWithMessage:@"确认取消收藏?" sureKey:^{
+            [weakSelf.cdManager deleteShoucangModelWithWithtype:@"shoucang_laugh" shoucang_id:_detail_id];
+            sender.selected = NO;
+        } cancelKey:nil];
+    } else {
+        [self.cdManager insertShoucangModelInDB:self.shoucang_model];
+        sender.selected = YES;
+    }}
 
-- (IBAction)xiazai:(id)sender {
-    NSLog(@"下载");
+- (IBAction)xiazai:(UIButton *)sender {
+    if (sender.selected) return;
     UIImageWriteToSavedPhotosAlbum(_imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:),nil);
 }
 
 -(void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void *)contextInfo {
     
     if(!error){
-        self.xiazaiBtn.enabled = NO;
-        NSLog(@"savesuccess");
+        
+        self.xiazaiBtn.selected = YES;
+        [self.xiazaiBtn setTitle:@"已保存到本地图库" forState:UIControlStateSelected];
     }else{
         [WPAlertView showAlertWithTitle:@"" message:@"若继续,请授权访问相机" sureKey:^{
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"prefs:root=Privacy"]]) {

@@ -123,12 +123,6 @@
     LaughModel *model = _arrayDS[indexPath.row];
     CGFloat width = [model.width floatValue];
     CGFloat height = [model.height floatValue];
-    CGFloat cellH = [self getLaughCellHeightWithW:width H:height];
-    return cellH;
-}
-
-- (CGFloat)getLaughCellHeightWithW:(CGFloat)width H:(CGFloat)height {
-
     height = height / (width / SCREEN_WIDTH);
     return height;
 }
@@ -137,6 +131,8 @@
     LaughDetailViewController *laughDetailVC = (id)[self initViewControllerWithStoryBoardID:@"laughdetail"];
     LaughModel *model = _arrayDS[indexPath.row];
     laughDetailVC.detail_id = model.gid;
+    laughDetailVC.shoucang_model = model;
+    laughDetailVC.shoucang_model.type = @"shoucang_laugh";
     [self.navigationController pushViewController:laughDetailVC animated:NO];
 }
 

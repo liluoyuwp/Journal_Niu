@@ -8,6 +8,8 @@
 
 #import "RootViewController.h"
 
+@class YILINModel;
+
 @interface YiLinDetailViewController : RootViewController
 
 @property (nonatomic, copy) NSString *yiLinDetail_id;
@@ -15,5 +17,7 @@
 @property (nonatomic, copy) NSString *text;
 
 @property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, strong) YILINModel *model;
 
 @end

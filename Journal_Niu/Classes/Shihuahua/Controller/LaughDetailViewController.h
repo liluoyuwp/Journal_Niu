@@ -8,8 +8,12 @@
 
 #import "RootViewController.h"
 
+@class LaughModel;
+
 @interface LaughDetailViewController : RootViewController
 
 @property (nonatomic, copy) NSString *detail_id;
+
+@property (nonatomic, strong) LaughModel *shoucang_model;
 
 @end

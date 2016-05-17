@@ -32,6 +32,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
 }
 
@@ -123,6 +124,8 @@
     vc.yiLinDetail_id = model.detail_id;
     vc.text = model.title;
     vc.image = cell.iconImageView.image;
+    vc.model = model;
+    vc.model.type = @"shoucang_yilin";
     [self.navigationController pushViewController:vc animated:YES];
 }
 

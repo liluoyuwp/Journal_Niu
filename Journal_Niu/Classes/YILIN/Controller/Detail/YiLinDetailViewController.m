@@ -11,6 +11,7 @@
 #import "AppTool.h"
 
 @interface YiLinDetailViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *shoucangBtn;
 
 @end
 
@@ -32,7 +33,7 @@
 
     [self updateData];
     
-//    [self addWebViewRefresh];
+    [self updateShoucangBtn];
 }
 
 - (void)initCache {
@@ -58,12 +59,25 @@
     [_webView loadRequest:_request];
 }
 
-- (void)addWebViewRefresh {
-    _webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
-        [urlCache removeCachedResponseForRequest:_webView.request];
-        [_webView loadRequest:_request];
-    }];
+- (void)updateShoucangBtn {
+    id obj = [self.cdManager searchShoucangModelInDBWithtype:@"shoucang_yilin" shoucang_id:_yiLinDetail_id];
+    if (![obj isKindOfClass:[NSString class]]) {
+        self.shoucangBtn.selected = YES;
+    }
+}
+
+#pragma mark - 收藏按钮
+- (IBAction)shoucangBtnClick:(UIButton *)sender {
+    WS(weakSelf);
+    if (sender.selected) {
+        [WPAlertView showAlertWithMessage:@"确认取消收藏?" sureKey:^{
+            [weakSelf.cdManager deleteShoucangModelWithWithtype:@"shoucang_yilin" shoucang_id:_yiLinDetail_id];
+            sender.selected = NO;
+        } cancelKey:nil];
+    } else {
+        [self.cdManager insertShoucangModelInDB:self.model];
+        sender.selected = YES;
+    }
 }
 
 #pragma mark - UIWebViewDelegate

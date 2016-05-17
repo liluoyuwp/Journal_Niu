@@ -41,10 +41,10 @@
     // The directory the application uses to store the Core Data store file. This code uses a directory named "yangyang.niu.coredatafile" in the application's documents directory.
     
     // 缓存目录默认Document
-//    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
     //使用library/caches.
-    return [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]];
+//    return [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
@@ -561,6 +561,163 @@
     NSArray * result = [_managedObjectContext executeFetchRequest:request error:&error];
     
     for (GentieCache *cache in result) {
+        [_managedObjectContext deleteObject:cache];
+    }
+    
+    //保存
+    NSError * error2 = nil;
+    [_managedObjectContext save:&error2];
+    if (error2) {
+        [NSException raise:@"删除错误" format:@"%@",[error2 localizedDescription]];
+    }
+    NSLog(@"删除成功:%ld", result.count);
+}
+
+//收藏
+/// 收藏-增
+- (void)insertShoucangModelInDB:(id)model {
+    if ([model isKindOfClass:[YILINModel class]]) {
+        [self insertYilinModelInDB:model];
+    } else if ([model isKindOfClass:[LaughModel class]]) {
+        [self insertLaughModelInDB:model];
+    } else {
+        NSLog(@"错误数据");
+    }
+}
+
+/// 收藏-查
+- (NSArray *)searchShoucangModelInDBWithtype:(NSString *)type {
+    NSString *entityName = nil;
+    if ([type rangeOfString:@"yilin"].length == 5) {
+        entityName = TABLE_NAME_YILIN;
+    } else {
+        entityName = TABLE_NAME_LAUGH;
+    }
+    //初始化一个查询请求
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    //设置查询的实体
+    request.entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:_managedObjectContext];
+    
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"type = %@",type];
+    request.predicate = predicate;
+    
+    NSError * error = nil;
+    NSArray * arrayResult = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        [NSException raise:@"查询错误" format:@"%@",[error localizedDescription]];
+    }
+    
+    NSMutableArray *array = [NSMutableArray array];
+    
+    if ([type rangeOfString:@"yilin"].length == 5) {
+        for (YiLinCache *cache in arrayResult) {
+            YILINModel *model = [[YILINModel alloc] init];
+            model.icon        = cache.icon;
+            model.des         = cache.des;
+            model.title       = cache.title;
+            model.page        = cache.page;
+            model.detail_id   = cache.journal_id;
+            model.type        = cache.type;
+            
+            [array addObject:model];
+        }
+    } else {
+        for (LaughCache *model in arrayResult) {
+            LaughModel *cache = [[LaughModel alloc] init];
+            cache.icon      = model.icon;
+            cache.gid       = model.gid;
+            cache.title     = model.title;
+            cache.page      = model.page;
+            cache.height    = model.height;
+            cache.width     = model.width;
+            
+            [array addObject:cache];
+        }
+    }
+    return [array copy];
+}
+
+- (id)searchShoucangModelInDBWithtype:(NSString *)type
+                          shoucang_id:(NSString *)shoucang_id {
+    NSString *entityName = nil;
+    NSString *searchStr = nil;
+    if ([type rangeOfString:@"yilin"].length == 5) {
+        entityName = TABLE_NAME_YILIN;
+        searchStr = @"journal_id = %@ and type = %@";
+    } else {
+        entityName = TABLE_NAME_LAUGH;
+        searchStr = @"gid = %@ and type = %@";
+    }
+    //初始化一个查询请求
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    //设置查询的实体
+    request.entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:_managedObjectContext];
+    
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:searchStr,shoucang_id,type];
+    request.predicate = predicate;
+    
+    NSError * error = nil;
+    NSArray * arrayResult = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        [NSException raise:@"查询错误" format:@"%@",[error localizedDescription]];
+    }
+    
+    NSMutableArray *array = [NSMutableArray array];
+    
+    if ([type rangeOfString:@"yilin"].length == 5) {
+        for (YiLinCache *cache in arrayResult) {
+            YILINModel *model = [[YILINModel alloc] init];
+            model.icon        = cache.icon;
+            model.des         = cache.des;
+            model.title       = cache.title;
+            model.page        = cache.page;
+            model.detail_id   = cache.journal_id;
+            model.type        = cache.type;
+            
+            [array addObject:model];
+        }
+    } else {
+        for (LaughCache *model in arrayResult) {
+            LaughModel *cache = [[LaughModel alloc] init];
+            cache.icon      = model.icon;
+            cache.gid       = model.gid;
+            cache.title     = model.title;
+            cache.page      = model.page;
+            cache.height    = model.height;
+            cache.width     = model.width;
+            
+            [array addObject:cache];
+        }
+    }
+    if (array.count >= 1) {
+        return array[0];
+    }
+    return @"";
+}
+
+/// 收藏-删
+- (void)deleteShoucangModelWithWithtype:(NSString *)type
+                            shoucang_id:(NSString *)shoucang_id {
+    NSString *entityName = nil;
+    NSString *searchStr = nil;
+    if ([type rangeOfString:@"yilin"].length == 5) {
+        entityName = TABLE_NAME_YILIN;
+        searchStr = @"journal_id = %@ and type = %@";
+    } else {
+        entityName = TABLE_NAME_LAUGH;
+        searchStr = @"gid = %@ and type = %@";
+    }
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    //去哪个数据库的哪个表里面找
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:_managedObjectContext]];
+    //查询条件 具体参考官方文档
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:searchStr,shoucang_id,type];
+    [request setPredicate:predicate];
+    
+    NSError * error = nil;
+    NSArray * result = [_managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (id cache in result) {
         [_managedObjectContext deleteObject:cache];
     }
     

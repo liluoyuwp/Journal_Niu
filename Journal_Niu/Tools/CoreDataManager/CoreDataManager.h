@@ -96,4 +96,19 @@
                             gentie_id:(NSString *)gentie_id
                                  type:(NSString *)type;
 
+//收藏
+/// 收藏-增
+- (void)insertShoucangModelInDB:(id)model;
+
+/// 收藏-查 全部
+- (NSArray *)searchShoucangModelInDBWithtype:(NSString *)type;
+
+/// 收藏-查 部分
+- (id)searchShoucangModelInDBWithtype:(NSString *)type
+                          shoucang_id:(NSString *)shoucang_id;
+
+/// 收藏-删
+- (void)deleteShoucangModelWithWithtype:(NSString *)type
+                            shoucang_id:(NSString *)shoucang_id;
+
 @end

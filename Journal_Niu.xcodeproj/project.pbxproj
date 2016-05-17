@@ -46,6 +46,8 @@
 		5C2DDF1D1CE9A41300988492 /* YiLinCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF1B1CE9A41300988492 /* YiLinCache.m */; };
 		5C2DDF331CE9D01600988492 /* LaughCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF301CE9D01600988492 /* LaughCache+CoreDataProperties.m */; };
 		5C2DDF341CE9D01600988492 /* LaughCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF321CE9D01600988492 /* LaughCache.m */; };
+		5C2DDF381CEAA86A00988492 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF371CEAA86A00988492 /* SettingViewController.m */; };
+		5C2DDF3B1CEABF7E00988492 /* ShoucangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDF3A1CEABF7E00988492 /* ShoucangViewController.m */; };
 		5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A0D1CC9F992001614BB /* ImagesModel.m */; };
 		5C451A161CCA0F8D001614BB /* LaughDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C451A151CCA0F8D001614BB /* LaughDetailViewController.m */; };
 		5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6988801CC1E2CB007734B4 /* SCNavTabBar.bundle */; };
@@ -67,7 +69,6 @@
 		5C8D06EB1CEA0FC900873AB7 /* WangqiCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06E91CEA0FC900873AB7 /* WangqiCache.m */; };
 		5C8D06F61CEA213100873AB7 /* GentieCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */; };
 		5C8D06F71CEA213100873AB7 /* GentieCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06F51CEA213100873AB7 /* GentieCache.m */; };
-		5CBD4FAF1CE08A31001270D6 /* aaaaaaaaa.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */; };
 		5CC599A01CC1D4E400C09BE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5999F1CC1D4E400C09BE9 /* main.m */; };
 		5CC599A31CC1D4E400C09BE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC599A21CC1D4E400C09BE9 /* AppDelegate.m */; };
 		5CC599A91CC1D4E400C09BE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599A71CC1D4E400C09BE9 /* Main.storyboard */; };
@@ -160,6 +161,10 @@
 		5C2DDF301CE9D01600988492 /* LaughCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LaughCache+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5C2DDF311CE9D01600988492 /* LaughCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughCache.h; sourceTree = "<group>"; };
 		5C2DDF321CE9D01600988492 /* LaughCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaughCache.m; sourceTree = "<group>"; };
+		5C2DDF361CEAA86A00988492 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		5C2DDF371CEAA86A00988492 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		5C2DDF391CEABF7E00988492 /* ShoucangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoucangViewController.h; sourceTree = "<group>"; };
+		5C2DDF3A1CEABF7E00988492 /* ShoucangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoucangViewController.m; sourceTree = "<group>"; };
 		5C451A0C1CC9F992001614BB /* ImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesModel.h; sourceTree = "<group>"; };
 		5C451A0D1CC9F992001614BB /* ImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesModel.m; sourceTree = "<group>"; };
 		5C451A141CCA0F8D001614BB /* LaughDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaughDetailViewController.h; sourceTree = "<group>"; };
@@ -194,7 +199,6 @@
 		5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GentieCache+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5C8D06F41CEA213100873AB7 /* GentieCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GentieCache.h; sourceTree = "<group>"; };
 		5C8D06F51CEA213100873AB7 /* GentieCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GentieCache.m; sourceTree = "<group>"; };
-		5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aaaaaaaaa.gif; sourceTree = "<group>"; };
 		5CC5999B1CC1D4E400C09BE9 /* Journal_Niu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal_Niu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC5999F1CC1D4E400C09BE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CC599A11CC1D4E400C09BE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -460,10 +464,21 @@
 			name = "诗画话";
 			sourceTree = "<group>";
 		};
+		5C2DDF351CEAA83800988492 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				5C2DDF361CEAA86A00988492 /* SettingViewController.h */,
+				5C2DDF371CEAA86A00988492 /* SettingViewController.m */,
+				5C2DDF391CEABF7E00988492 /* ShoucangViewController.h */,
+				5C2DDF3A1CEABF7E00988492 /* ShoucangViewController.m */,
+			);
+			name = "设置";
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		5C69887C1CC1E02D007734B4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				5CBD4FAE1CE08A31001270D6 /* aaaaaaaaa.gif */,
 				5CC599AA1CC1D4E400C09BE9 /* Assets.xcassets */,
 			);
 			name = Resource;
@@ -523,6 +538,7 @@
 				5CD8CA7F1CC4DDF100AB1F92 /* 诗画话 */,
 				5CD8CA831CC4DE3900AB1F92 /* 指谈会 */,
 				5CD8CA871CC4DE5F00AB1F92 /* 微博 */,
+				5C2DDF351CEAA83800988492 /* 设置 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -816,7 +832,6 @@
 				5C00B5201CC7617A00FEAA9F /* GentieCell.xib in Resources */,
 				5CC599AB1CC1D4E400C09BE9 /* Assets.xcassets in Resources */,
 				5C00B4AE1CC4EB8700FEAA9F /* YILINCell.xib in Resources */,
-				5CBD4FAF1CE08A31001270D6 /* aaaaaaaaa.gif in Resources */,
 				5CC599A91CC1D4E400C09BE9 /* Main.storyboard in Resources */,
 				5C00B53F1CC8BCB100FEAA9F /* LaughCell.xib in Resources */,
 			);
@@ -884,6 +899,7 @@
 				5CEAB0341CCDEFF500BDC408 /* Util.m in Sources */,
 				5C00B51F1CC7617A00FEAA9F /* GentieCell.m in Sources */,
 				5C451A0E1CC9F992001614BB /* ImagesModel.m in Sources */,
+				5C2DDF381CEAA86A00988492 /* SettingViewController.m in Sources */,
 				5C00B4C01CC5C52800FEAA9F /* SoupViewController.m in Sources */,
 				5C00B5331CC8A0A700FEAA9F /* LaughViewController.m in Sources */,
 				5C00B4D01CC5D19D00FEAA9F /* APIManager.m in Sources */,
@@ -927,6 +943,7 @@
 				5C00B50F1CC75D1900FEAA9F /* WangqiViewController.m in Sources */,
 				5CEAB0331CCDEFF500BDC408 /* Reachability.m in Sources */,
 				5C8D06EA1CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m in Sources */,
+				5C2DDF3B1CEABF7E00988492 /* ShoucangViewController.m in Sources */,
 				5CD8CA8E1CC4DFE000AB1F92 /* WPAlertView.m in Sources */,
 				5C00B4A31CC4EA5A00FEAA9F /* Model.m in Sources */,
 				5C00B53A1CC8BAA500FEAA9F /* LaughModel.m in Sources */,

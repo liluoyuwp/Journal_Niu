@@ -807,7 +807,7 @@
 				TargetAttributes = {
 					5CC5999A1CC1D4E400C09BE9 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2UDNR4WTGT;
+						DevelopmentTeam = 6DHYQB3CFP;
 					};
 				};
 			};
@@ -1110,7 +1110,7 @@
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/Whatsapp",
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.autodesk.easyhome.shejijiatest;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.juranHomeDesignerAppstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1145,7 +1145,7 @@
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/Whatsapp",
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.autodesk.easyhome.shejijiatest;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.juranHomeDesignerAppstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

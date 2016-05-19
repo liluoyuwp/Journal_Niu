@@ -121,7 +121,7 @@
         self.xiazaiBtn.selected = YES;
         [self.xiazaiBtn setTitle:@"已保存到本地图库" forState:UIControlStateSelected];
     }else{
-        [WPAlertView showAlertWithTitle:@"" message:@"若继续,请授权访问相机" sureKey:^{
+        [WPAlertView showAlertWithTitle:@"" message:@"若继续,请授权访问相册" sureKey:^{
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"prefs:root=Privacy"]]) {
                 
                 //开启手机系统设置，授权访问相册

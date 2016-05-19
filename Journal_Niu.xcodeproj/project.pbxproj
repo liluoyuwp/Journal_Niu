@@ -70,6 +70,8 @@
 		5C8D06EB1CEA0FC900873AB7 /* WangqiCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06E91CEA0FC900873AB7 /* WangqiCache.m */; };
 		5C8D06F61CEA213100873AB7 /* GentieCache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */; };
 		5C8D06F71CEA213100873AB7 /* GentieCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D06F51CEA213100873AB7 /* GentieCache.m */; };
+		5CA411CB1CEDB6AA00103768 /* TimesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA411CA1CEDB6AA00103768 /* TimesView.m */; };
+		5CA411CD1CEDB6DA00103768 /* TimesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CA411CC1CEDB6DA00103768 /* TimesView.xib */; };
 		5CC599A01CC1D4E400C09BE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5999F1CC1D4E400C09BE9 /* main.m */; };
 		5CC599A31CC1D4E400C09BE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC599A21CC1D4E400C09BE9 /* AppDelegate.m */; };
 		5CC599A91CC1D4E400C09BE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599A71CC1D4E400C09BE9 /* Main.storyboard */; };
@@ -205,6 +207,9 @@
 		5C8D06F31CEA213100873AB7 /* GentieCache+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GentieCache+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5C8D06F41CEA213100873AB7 /* GentieCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GentieCache.h; sourceTree = "<group>"; };
 		5C8D06F51CEA213100873AB7 /* GentieCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GentieCache.m; sourceTree = "<group>"; };
+		5CA411C91CEDB6AA00103768 /* TimesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimesView.h; sourceTree = "<group>"; };
+		5CA411CA1CEDB6AA00103768 /* TimesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesView.m; sourceTree = "<group>"; };
+		5CA411CC1CEDB6DA00103768 /* TimesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimesView.xib; sourceTree = "<group>"; };
 		5CC5999B1CC1D4E400C09BE9 /* Journal_Niu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal_Niu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC5999F1CC1D4E400C09BE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CC599A11CC1D4E400C09BE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -346,6 +351,9 @@
 				5C00B51C1CC7617A00FEAA9F /* GentieCell.h */,
 				5C00B51D1CC7617A00FEAA9F /* GentieCell.m */,
 				5C00B51E1CC7617A00FEAA9F /* GentieCell.xib */,
+				5CA411C91CEDB6AA00103768 /* TimesView.h */,
+				5CA411CA1CEDB6AA00103768 /* TimesView.m */,
+				5CA411CC1CEDB6DA00103768 /* TimesView.xib */,
 			);
 			name = View;
 			path = Zhitanhui/View;
@@ -844,6 +852,7 @@
 				5CC599A91CC1D4E400C09BE9 /* Main.storyboard in Resources */,
 				5C2DDF6C1CEB01EC00988492 /* InfoPlist.strings in Resources */,
 				5C00B53F1CC8BCB100FEAA9F /* LaughCell.xib in Resources */,
+				5CA411CD1CEDB6DA00103768 /* TimesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +962,7 @@
 				5C00B50F1CC75D1900FEAA9F /* WangqiViewController.m in Sources */,
 				5CEAB0331CCDEFF500BDC408 /* Reachability.m in Sources */,
 				5C8D06EA1CEA0FC900873AB7 /* WangqiCache+CoreDataProperties.m in Sources */,
+				5CA411CB1CEDB6AA00103768 /* TimesView.m in Sources */,
 				5C2DDF3B1CEABF7E00988492 /* ShoucangViewController.m in Sources */,
 				5CD8CA8E1CC4DFE000AB1F92 /* WPAlertView.m in Sources */,
 				5C00B4A31CC4EA5A00FEAA9F /* Model.m in Sources */,
@@ -1086,6 +1096,7 @@
 			baseConfigurationReference = 368E5836DAE4B8222D483F23 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1112,6 +1123,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.juranHomeDesignerAppstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Journal_Niu/Classes/Zhitanhui/View/Journal_Niu-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1120,6 +1133,7 @@
 			baseConfigurationReference = 1BDBE7C9BFCC5893DC5FAC67 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Easyhome E-commerce Co., Ltd.";
 				ENABLE_BITCODE = NO;
@@ -1147,6 +1161,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.juranHomeDesignerAppstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Journal_Niu/Classes/Zhitanhui/View/Journal_Niu-Bridging-Header.h";
 			};
 			name = Release;
 		};

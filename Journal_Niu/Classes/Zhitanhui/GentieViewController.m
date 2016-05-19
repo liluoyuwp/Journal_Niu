@@ -11,8 +11,13 @@
 #import "GentieCell.h"
 #import "MPSegmentedControl.h"
 #import "PinglunViewController.h"
+#import "TimesView.h"
 
-@interface GentieViewController ()<UITableViewDelegate,UITableViewDataSource,MPSegmentedControlDelegate>
+@interface GentieViewController ()<
+UITableViewDelegate,
+UITableViewDataSource,
+MPSegmentedControlDelegate,
+TimesViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -125,6 +130,22 @@
     GentieCell *cell = [tableView dequeueReusableCellWithIdentifier:gentieCellID forIndexPath:indexPath];
     [cell updateGentieCellWithModel:_arrayDS[indexPath.row]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ////82         CGSize size = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontSize]]}];
+    TimesView *timesView = [[[NSBundle mainBundle] loadNibNamed:@"TimesView" owner:self options:nil] lastObject];
+    timesView.delegate = self;
+    [self.view addSubview:timesView];
+}
+
+#pragma mark - TimesViewDelegate
+- (void)buttonClickTithTag:(NSInteger)tag
+                    finish:(void (^) (BOOL))finish {
+    
+    if (tag == 555) {
+#warning jjjjjjj
+    }
 }
 
 #pragma mark - MPSegmentedControlDelegate

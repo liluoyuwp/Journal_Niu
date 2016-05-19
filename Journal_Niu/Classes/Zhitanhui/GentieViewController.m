@@ -134,18 +134,36 @@ TimesViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ////82         CGSize size = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontSize]]}];
-    TimesView *timesView = [[[NSBundle mainBundle] loadNibNamed:@"TimesView" owner:self options:nil] lastObject];
-    timesView.delegate = self;
-    [self.view addSubview:timesView];
-}
+    GentieModel *model = _arrayDS[indexPath.row];
+    
+    CGSize size = [model.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 20 - 16, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f]} context:nil].size;
+    
+    CGRect rect = CGRectMake(10, SCREEN_HEIGHT/2.0 - (size.height + 82)/2.0, SCREEN_WIDTH - 20, size.height + 82);
+
+    [TimesView showTimesViewWithView:self.view
+                            delegate:self
+                               Frame:rect
+                                info:model];
+    }
 
 #pragma mark - TimesViewDelegate
 - (void)buttonClickTithTag:(NSInteger)tag
-                    finish:(void (^) (BOOL))finish {
+                  model:(GentieModel *)model
+                    finish:(void (^) ())finish {
     
-    if (tag == 555) {
-#warning jjjjjjj
-    }
+    BOOL isUptimes = NO;
+    if (tag == 555) isUptimes = YES;
+    
+    [GentieModel requestForTimesWithGentieID:model.uid isUptimes:isUptimes complete:^(BOOL isUptimes) {
+        
+        if (isUptimes) {
+            model.up_times  = [NSString stringWithFormat:@"%ld",[model.up_times integerValue] + 1];
+            [_tableView reloadData];
+        }
+        
+        if (finish)
+            finish();        
+    }];
 }
 
 #pragma mark - MPSegmentedControlDelegate

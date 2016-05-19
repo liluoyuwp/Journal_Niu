@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class GentieModel;
+
 @protocol TimesViewDelegate <NSObject>
 
 - (void)buttonClickTithTag:(NSInteger)tag
-                   finish:(void (^) (BOOL success))finish;
+                     model:(GentieModel *)model
+                    finish:(void (^) ())finish;
 
 @end
 
 @interface TimesView : UIView
 
-@property (nonatomic, assign) id<TimesViewDelegate>delegate;
++ (void)showTimesViewWithView:(UIView *)view
+                     delegate:(id)delegate
+                        Frame:(CGRect)frame
+                         info:(GentieModel *)model;
 
 @end

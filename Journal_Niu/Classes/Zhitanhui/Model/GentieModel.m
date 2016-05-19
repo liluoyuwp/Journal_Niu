@@ -7,6 +7,7 @@
 //
 
 #import "GentieModel.h"
+#import "YLAPI.h"
 
 @implementation GentieModel
 
@@ -55,6 +56,28 @@
         if (failure) {
             failure(error);
         }
+    }];
+}
+
++ (void)requestForTimesWithGentieID:(NSString *)gentie_id
+                          isUptimes:(BOOL)isUptimes
+                           complete:(void (^) (BOOL isUptimes))complete {
+    
+    NSString *urlString = nil;
+    if (isUptimes) {
+        urlString = [NSString stringWithFormat:PARTICPANCE_COMMENTLIST_UPTIMES,gentie_id];
+    } else {
+        urlString = [NSString stringWithFormat:PARTICPANCE_COMMENTLIST_DOWNTIMES, gentie_id];
+    }
+    
+    [APIManager requestOfGetWithUrl:urlString param:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseDict) {
+        
+        if (complete) {
+            complete(isUptimes);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        NSLog(@"%@",error);
     }];
 }
 

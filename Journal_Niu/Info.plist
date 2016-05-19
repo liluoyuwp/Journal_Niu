@@ -27,7 +27,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxdc1e388c3822c80b</string>
+				<string>wx20c32ca782ff8e3f</string>
 			</array>
 		</dict>
 		<dict>
@@ -43,15 +43,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>sina.5211818556240bc9ee01db2f</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wb3921700954</string>
+				<string>wb276476390</string>
 			</array>
 		</dict>
 		<dict>
@@ -62,14 +54,6 @@
 				<string>tencent100424468</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wb126663232</string>
-			</array>
-		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -78,11 +62,11 @@
 		<string>mqqOpensdkSSoLogin</string>
 		<string>mqzone</string>
 		<string>sinaweibo</string>
-        <string>sinaweibohd</string>
-        <string>sinaweibosso</string>
-        <string>sinaweibohdsso</string>
-        <string>weibosdk</string>
-        <string>weibosdk2.5</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibosso</string>
+		<string>sinaweibohdsso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
 		<string>alipayauth</string>
 		<string>alipay</string>
 		<string>safepay</string>

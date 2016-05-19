@@ -62,6 +62,12 @@
 //指谈会 跟帖 按时间
 #define PARTICPANCE_COMMENTLIST_TIME_URL @"http://yl.cms.palmtrends.com/api_v2.php?action=commentlist&id=%@&offset=%d&count=15&ordertype=1&uid=10288928&platform=a"
 
+//指谈会 跟帖 顶贴
+#define PARTICPANCE_COMMENTLIST_UPTIMES @"http://yl.cms.palmtrends.com/api_v2.php?action=top.comment&offset=0&count=15&cid=%@&type=1&e=8e1a3ce94149f50df91a29b573933183&uid=(null)&pid=10048&mobile=iPhone8,1&platform=i"
+
+//指谈会 跟帖 倒贴
+#define PARTICPANCE_COMMENTLIST_DOWNTIMES @"http://yl.cms.palmtrends.com/api_v2.php?action=top.comment&offset=0&count=15&cid=%@&type=2&e=8e1a3ce94149f50df91a29b573933183&uid=(null)&pid=10048&mobile=iPhone8,1&platform=i"
+
 //跟帖 评论
 #define PARTICPANCE_PINGLUN_URL @"http://yl.cms.palmtrends.com/api_v2.php?action=wzpl&offset=0&count=15&content=%@&id=%@&e=8e1a3ce94149f50df91a29b573933183&uid=10288928&pid=10048&mobile=iPhone8,1&platform=i"
 

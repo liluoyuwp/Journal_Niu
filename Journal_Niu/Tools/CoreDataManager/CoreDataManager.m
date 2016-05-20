@@ -314,7 +314,7 @@
     //首先需要建立一个request
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
     //去哪个数据库的哪个表里面找
-    [request setEntity:[NSEntityDescription entityForName:TABLE_NAME_YILIN inManagedObjectContext:_managedObjectContext]];
+    [request setEntity:[NSEntityDescription entityForName:TABLE_NAME_LAUGH inManagedObjectContext:_managedObjectContext]];
     //查询条件 具体参考官方文档
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"page = %@ and type = %@",page,type];
     [request setPredicate:predicate];

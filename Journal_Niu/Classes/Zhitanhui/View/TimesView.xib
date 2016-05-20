@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -83,7 +83,7 @@
                                 <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Qt-ev-YlV"/>
                             </connections>
                         </button>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="558" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y0-Tz-ajX">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="558" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y0-Tz-ajX">
                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -104,12 +104,21 @@
                         <constraint firstItem="0y0-Tz-ajX" firstAttribute="top" secondItem="ZjB-lI-b9b" secondAttribute="top" id="rfQ-dQ-uc8"/>
                     </constraints>
                 </view>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="E3Z-w8-v7F">
+                    <rect key="frame" x="293" y="5" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="13r-dI-kh2"/>
+                        <constraint firstAttribute="height" constant="22" id="WEl-Ma-aJd"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="6WR-Qa-zYV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="3DA-3d-GiU"/>
+                <constraint firstAttribute="trailing" secondItem="E3Z-w8-v7F" secondAttribute="trailing" constant="5" id="7VO-gS-AiD"/>
                 <constraint firstAttribute="trailing" secondItem="6WR-Qa-zYV" secondAttribute="trailing" constant="8" id="CJq-SD-tTN"/>
                 <constraint firstItem="vHX-fn-GTo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="P3G-W1-D4T"/>
+                <constraint firstItem="E3Z-w8-v7F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Ula-hV-cCz"/>
                 <constraint firstItem="6WR-Qa-zYV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="aEI-1f-giR"/>
                 <constraint firstItem="ZjB-lI-b9b" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="72.5" id="bjq-AR-22I"/>
                 <constraint firstItem="suL-xL-3cI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-72.5" id="dHr-Mk-kCG"/>
@@ -120,6 +129,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="closeView" destination="E3Z-w8-v7F" id="VXU-No-I5C"/>
                 <outlet property="contentLabel" destination="vHX-fn-GTo" id="REv-FN-ag5"/>
                 <outlet property="downtimesBtn" destination="3cd-jQ-Rlu" id="wfV-cS-ISJ"/>
                 <outlet property="downtimesStatus" destination="0y0-Tz-ajX" id="7Om-3t-n7w"/>
@@ -127,10 +137,11 @@
                 <outlet property="uptimesBtn" destination="Z8p-3W-2ye" id="7ny-n3-vuq"/>
                 <outlet property="uptimesStatus" destination="97z-uk-UuP" id="wN0-Zc-PJr"/>
             </connections>
-            <point key="canvasLocation" x="288" y="8.5"/>
+            <point key="canvasLocation" x="281" y="19.5"/>
         </view>
     </objects>
     <resources>
+        <image name="close" width="35" height="35"/>
         <image name="跟帖底" width="200" height="58"/>
     </resources>
 </document>

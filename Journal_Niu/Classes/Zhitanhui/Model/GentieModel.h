@@ -36,4 +36,8 @@
                              success:(void (^)(NSDictionary *dict))success
                              failure:(void (^)(NSError *error))failure;
 
++ (void)requestForTimesWithGentieID:(NSString *)gentie_id
+                          isUptimes:(BOOL)isUptimes
+                           complete:(void (^) (BOOL isUptimes))complete;
+
 @end

@@ -41,7 +41,7 @@
                                          RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     //设置分享到QQ空间的应用Id，和分享url链接
-    [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://ui.ptlogin2.qq.com/cgi-bin/login?style=9&pt_ttype=1&appid=549000929&pt_no_auth=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex"];
+    [UMSocialQQHandler setQQWithAppId:@"1105339695" appKey:@"gNgzAL7MaVmh74ai" url:@"http://ui.ptlogin2.qq.com/cgi-bin/login?style=9&pt_ttype=1&appid=549000929&pt_no_auth=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex"];
     //设置支持没有客户端情况下使用SSO授权
     [UMSocialQQHandler setSupportWebView:YES];
     

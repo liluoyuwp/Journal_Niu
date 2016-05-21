@@ -89,7 +89,7 @@
                                     <outlet property="delegate" destination="wWY-jW-k96" id="uKB-H3-ioD"/>
                                 </connections>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-pn-BqO">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-pn-BqO">
                                 <rect key="frame" x="0.0" y="551" width="199" height="49"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -103,7 +103,7 @@
                                     <action selector="shoucangBtnClick:" destination="wWY-jW-k96" eventType="touchUpInside" id="9Do-Xn-dgy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-TA-AsG">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-TA-AsG">
                                 <rect key="frame" x="201" y="551" width="199" height="49"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -136,7 +136,7 @@
                                     <constraint firstAttribute="width" constant="2" id="GRm-GE-9MP"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPa-93-SxT">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPa-93-SxT">
                                 <rect key="frame" x="402" y="551" width="198" height="49"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -177,6 +177,8 @@
                     </view>
                     <connections>
                         <outlet property="_webView" destination="gbe-0T-94e" id="Age-dg-mLH"/>
+                        <outlet property="pinglunBtn" destination="Z3a-TA-AsG" id="ANh-6J-Wji"/>
+                        <outlet property="shareBtn" destination="vPa-93-SxT" id="5hQ-NU-1RT"/>
                         <outlet property="shoucangBtn" destination="qC0-pn-BqO" id="f8w-Xq-lVd"/>
                     </connections>
                 </viewController>
@@ -317,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqw-5w-2NJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2550" y="1113"/>
+            <point key="canvasLocation" x="2542" y="1123"/>
         </scene>
         <!--Laugh View Controller-->
         <scene sceneID="eJQ-fi-DfT">

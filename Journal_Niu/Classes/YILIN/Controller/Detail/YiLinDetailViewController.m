@@ -12,6 +12,8 @@
 #import "GentieViewController.h"
 
 @interface YiLinDetailViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *pinglunBtn;
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *shoucangBtn;
 
@@ -101,7 +103,10 @@
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [_webView.scrollView.mj_header endRefreshing];
+    self.pinglunBtn.enabled = YES;
+    self.shareBtn.enabled = YES;
+    self.shoucangBtn.enabled = YES;
+    
     [self hideHUD];
 }
 

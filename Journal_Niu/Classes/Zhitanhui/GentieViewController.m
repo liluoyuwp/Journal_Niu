@@ -138,9 +138,14 @@ TimesViewDelegate>
     
     CGSize size = [model.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 20 - 16, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f]} context:nil].size;
     
-    CGRect rect = CGRectMake(10, SCREEN_HEIGHT/2.0 - (size.height + 82)/2.0, SCREEN_WIDTH - 20, size.height + 82);
+    CGFloat height = size.height;
+    if (height > 300) {
+        height = 300;
+    }
+    CGRect rect = CGRectMake(10, SCREEN_HEIGHT/2.0 - (size.height + 82)/2.0 - 10, SCREEN_WIDTH - 20, height + 82);
 
-    [TimesView showTimesViewWithView:self.view
+    
+    [TimesView showTimesViewWithView:self.tabBarController.view
                             delegate:self
                                Frame:rect
                                 info:model];

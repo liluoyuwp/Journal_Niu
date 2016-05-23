@@ -20,6 +20,8 @@
         
         NSArray *array = responseDict[@"list"];
         if (![array isKindOfClass:[NSArray class]]) {
+            
+            if (failure) failure(nil);
             return ;
         }
         

@@ -19,6 +19,8 @@
         
         NSArray *array = responseDict[@"list"];
         if (!(array && [array isKindOfClass:[NSArray class]])) {
+            
+            if (failure) failure(nil);
             return ;
         }
         

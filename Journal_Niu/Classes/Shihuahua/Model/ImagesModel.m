@@ -19,6 +19,8 @@
         
         NSArray *array = (id)responseDict;
         if (![array isKindOfClass:[NSArray class]]) {
+            
+            if (failure) failure(nil);
             return ;
         }
         

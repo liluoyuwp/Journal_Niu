@@ -133,7 +133,7 @@ TimesViewDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ////82         CGSize size = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontSize]]}];
+
     GentieModel *model = _arrayDS[indexPath.row];
     
     CGSize size = [model.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 20 - 16, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f]} context:nil].size;

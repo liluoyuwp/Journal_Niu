@@ -142,7 +142,7 @@ TimesViewDelegate>
     if (height > 300) {
         height = 300;
     }
-    CGRect rect = CGRectMake(10, SCREEN_HEIGHT/2.0 - (size.height + 82)/2.0 - 10, SCREEN_WIDTH - 20, height + 82);
+    CGRect rect = CGRectMake(10, SCREEN_HEIGHT/2.0 - (height + 82)/2.0 - 10, SCREEN_WIDTH - 20, height + 82);
 
     
     [TimesView showTimesViewWithView:self.tabBarController.view

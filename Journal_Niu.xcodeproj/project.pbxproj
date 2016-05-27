@@ -1122,7 +1122,7 @@
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/Whatsapp",
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.jurniu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autodesk.easyhome.shejijiatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Journal_Niu/Classes/Zhitanhui/View/Journal_Niu-Bridging-Header.h";
@@ -1161,7 +1161,7 @@
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/Whatsapp",
 					"$(PROJECT_DIR)/Journal_Niu/Tools/LibFrameWork/YiXin",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.juran.jurniu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autodesk.easyhome.shejijiatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Journal_Niu/Classes/Zhitanhui/View/Journal_Niu-Bridging-Header.h";

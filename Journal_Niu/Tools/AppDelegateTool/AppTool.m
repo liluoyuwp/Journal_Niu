@@ -85,6 +85,8 @@
     [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
     //启动更新检查SDK
     [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+    //关闭用户反馈功能
+    [[PgyManager sharedPgyManager] setEnableFeedback:NO];
 }
 
 /// 检查更新

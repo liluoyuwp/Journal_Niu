@@ -44,6 +44,9 @@ dispatch_async(dispatch_get_main_queue(), block);\
 /// 友盟分享AppKey
 #define UMSOCIAL_KEY @"5732a1d8e0f55a5c95002bf5"
 
+/// 蒲公英AppKey
+#define PGY_APP_ID @"b25c23ef1ba35ae6636760436b101f78"
+
 
 // 意林 最新
 #define YILIN_ZUIXIN @"yilin_zuixin"

@@ -26,6 +26,10 @@
     
     [AppTool initializeUMSocial];
     
+    [AppTool initializePugongying];
+    
+    [AppTool checkUpdateVersion];
+    
     return YES;
 }
 

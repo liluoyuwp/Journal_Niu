@@ -18,6 +18,8 @@
 #import "UMSocialTumblrHandler.h"
 #import "UMSocialLineHandler.h"
 #import "YLAPI.h"
+#import <PgySDK/PgyManager.h>
+#import <PgyUpdate/PgyUpdateManager.h>
 
 @interface AppTool ()<UMSocialUIDelegate>
 
@@ -25,6 +27,7 @@
 
 @implementation AppTool
 
+#pragma maek - 友盟相关
 + (void)initializeUMSocial {
     [UMSocialData setAppKey:UMSOCIAL_KEY];
     
@@ -56,14 +59,6 @@
     [UMSocialSnsService  applicationDidBecomeActive];
 }
 
-+ (void)initializeCache {
-    CustomURLCache *urlCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
-                                                                 diskCapacity:200 * 1024 * 1024
-                                                                     diskPath:nil
-                                                                    cacheTime:0];
-    [CustomURLCache setSharedURLCache:urlCache];
-}
-
 + (void)shareInViewController:(UIViewController *)vc
                          text:(NSString *)text
                         image:(UIImage *)image
@@ -82,6 +77,29 @@
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = strUrl;
     [UMSocialData defaultData].extConfig.qqData.url = strUrl;
     [UMSocialData defaultData].extConfig.qzoneData.url = strUrl;
+}
+
+#pragma mark - 蒲公英
++ (void)initializePugongying {
+    //启动基本SDK
+    [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+    //启动更新检查SDK
+    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+}
+
+/// 检查更新
++ (void)checkUpdateVersion {
+    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+}
+
+#pragma mark - public method
++ (void)initializeCache {
+    CustomURLCache *urlCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
+                                                                 diskCapacity:200 * 1024 * 1024
+                                                                     diskPath:nil
+                                                                    cacheTime:0];
+    [CustomURLCache setSharedURLCache:urlCache];
 }
 
 @end

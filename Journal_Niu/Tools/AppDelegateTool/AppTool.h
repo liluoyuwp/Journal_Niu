@@ -14,6 +14,12 @@
 /// 初始化友盟分享管理类.
 + (void)initializeUMSocial;
 
+/// 初始化蒲公英版SDK.
++ (void)initializePugongying;
+
+/// 检查更新
++ (void)checkUpdateVersion;
+
 /// 初始化webView缓存类.
 + (void)initializeCache;
 

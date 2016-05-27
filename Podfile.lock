@@ -16,6 +16,8 @@ PODS:
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.0)
+  - Pgyer (2.8.4)
+  - PgyUpdate (1.2)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -25,6 +27,8 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - MBProgressHUD (~> 0.9.2)
   - MJRefresh (~> 3.1.0)
+  - Pgyer
+  - PgyUpdate
   - SDWebImage (~> 3.7.5)
   - UMengSocialCOM (~> 5.1)
 
@@ -32,9 +36,11 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  Pgyer: 26edfcc8da6da6383fabfdbccd2f77c623b9d6eb
+  PgyUpdate: a42e82cec5ad4e992af390e9d494f6fc62db65e4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   UMengSocialCOM: 8fa4732b03757161aaa8aab97be7d980adb9ccdb
 
-PODFILE CHECKSUM: 76d614d820520749522f72b23b2e32fa601e61bc
+PODFILE CHECKSUM: dac5881602ab61e3403658904edf29cd4684dc85
 
 COCOAPODS: 1.0.0

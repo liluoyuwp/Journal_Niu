@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "AppTool.h"
-#import "CustomURLCache.h"
 
 @interface AppDelegate ()
 

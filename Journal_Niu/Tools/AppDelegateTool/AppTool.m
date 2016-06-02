@@ -91,7 +91,6 @@
 
 /// 检查更新
 + (void)checkUpdateVersion {
-    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
     [[PgyUpdateManager sharedPgyManager] checkUpdate];
 }
 

@@ -89,6 +89,7 @@
 
 #pragma mark - button click
 - (IBAction)jinru:(id)sender {
+    [_moviePlayer.view removeFromSuperview];
     _moviePlayer = nil;
     [self endTimer];
     

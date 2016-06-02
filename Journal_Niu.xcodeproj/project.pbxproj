@@ -79,6 +79,8 @@
 		5CC599AB1CC1D4E400C09BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599AA1CC1D4E400C09BE9 /* Assets.xcassets */; };
 		5CC599AE1CC1D4E400C09BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC599AC1CC1D4E400C09BE9 /* LaunchScreen.storyboard */; };
 		5CC5AB8A1CD87F8400C221B0 /* AppTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5AB891CD87F8400C221B0 /* AppTool.m */; };
+		5CD782FA1D0031DB009255AB /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD782F91D0031DB009255AB /* GuideViewController.m */; };
+		5CD782FC1D0036B0009255AB /* guide.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CD782FB1D0036B0009255AB /* guide.mp4 */; };
 		5CD8CA861CC4DE5100AB1F92 /* ZhitanhuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8CA851CC4DE5100AB1F92 /* ZhitanhuiViewController.m */; };
 		5CD8CA8A1CC4DE7400AB1F92 /* WeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8CA891CC4DE7400AB1F92 /* WeiboViewController.m */; };
 		5CD8CA8E1CC4DFE000AB1F92 /* WPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8CA8D1CC4DFE000AB1F92 /* WPAlertView.m */; };
@@ -218,6 +220,9 @@
 		5CC599AF1CC1D4E400C09BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
 		5CC5AB881CD87F8400C221B0 /* AppTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTool.h; sourceTree = "<group>"; };
 		5CC5AB891CD87F8400C221B0 /* AppTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTool.m; sourceTree = "<group>"; };
+		5CD782F81D0031DB009255AB /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		5CD782F91D0031DB009255AB /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		5CD782FB1D0036B0009255AB /* guide.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = guide.mp4; sourceTree = "<group>"; };
 		5CD8CA721CC4D9BE00AB1F92 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		5CD8CA731CC4D9BE00AB1F92 /* YLAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLAPI.h; sourceTree = "<group>"; };
 		5CD8CA841CC4DE5100AB1F92 /* ZhitanhuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhitanhuiViewController.h; path = Zhitanhui/ZhitanhuiViewController.h; sourceTree = "<group>"; };
@@ -484,6 +489,7 @@
 		5C69887C1CC1E02D007734B4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5CD782FB1D0036B0009255AB /* guide.mp4 */,
 				5CC599AA1CC1D4E400C09BE9 /* Assets.xcassets */,
 			);
 			name = Resource;
@@ -537,6 +543,7 @@
 		5C69888D1CC1E479007734B4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5CD782F71D0031B9009255AB /* PageStart */,
 				5CD8CA741CC4DAE800AB1F92 /* Root */,
 				5C69888E1CC1E47A007734B4 /* System */,
 				5CD8CA7B1CC4DDC400AB1F92 /* YILIN */,
@@ -642,6 +649,15 @@
 			);
 			name = AppTool;
 			path = AppDelegateTool;
+			sourceTree = "<group>";
+		};
+		5CD782F71D0031B9009255AB /* PageStart */ = {
+			isa = PBXGroup;
+			children = (
+				5CD782F81D0031DB009255AB /* GuideViewController.h */,
+				5CD782F91D0031DB009255AB /* GuideViewController.m */,
+			);
+			path = PageStart;
 			sourceTree = "<group>";
 		};
 		5CD8CA711CC4D9BE00AB1F92 /* Header */ = {
@@ -843,6 +859,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD782FC1D0036B0009255AB /* guide.mp4 in Resources */,
 				5CC599AE1CC1D4E400C09BE9 /* LaunchScreen.storyboard in Resources */,
 				5C6988891CC1E2CB007734B4 /* SCNavTabBar.bundle in Resources */,
 				5C00B51B1CC7611F00FEAA9F /* WangqiCell.xib in Resources */,
@@ -923,6 +940,7 @@
 				5C00B5331CC8A0A700FEAA9F /* LaughViewController.m in Sources */,
 				5C00B4D01CC5D19D00FEAA9F /* APIManager.m in Sources */,
 				5C83772D1CE30D29009CCD73 /* MPSegmentedControl.m in Sources */,
+				5CD782FA1D0031DB009255AB /* GuideViewController.m in Sources */,
 				5C00B4A01CC4EA4800FEAA9F /* RootViewController.m in Sources */,
 				5C2DDF061CE848D500988492 /* PinglunViewController.m in Sources */,
 				5C8D06F71CEA213100873AB7 /* GentieCache.m in Sources */,

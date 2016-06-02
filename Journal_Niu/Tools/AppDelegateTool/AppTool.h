@@ -35,4 +35,7 @@
                         image:(UIImage *)image
                      detailID:(NSString *)detail_id;
 
+/// 是否首次启动.
++ (BOOL)isFirstComing;
+
 @end

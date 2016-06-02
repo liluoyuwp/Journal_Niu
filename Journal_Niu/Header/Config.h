@@ -41,6 +41,9 @@ dispatch_async(dispatch_get_main_queue(), block);\
 /// 请求时间
 #define REQUEST_TIME 300.0f
 
+/// 首次启动
+#define GUIDE_KEY @"guide_key"
+
 /// 友盟分享AppKey
 #define UMSOCIAL_KEY @"5732a1d8e0f55a5c95002bf5"
 

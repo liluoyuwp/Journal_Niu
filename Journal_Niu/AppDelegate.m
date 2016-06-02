@@ -29,6 +29,11 @@
     
     [AppTool checkUpdateVersion];
     
+    if ([AppTool isFirstComing]) {
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle: nil ];
+        self.window.rootViewController = [storyBoard instantiateViewControllerWithIdentifier:@"guide"];
+    }
+    
     return YES;
 }
 

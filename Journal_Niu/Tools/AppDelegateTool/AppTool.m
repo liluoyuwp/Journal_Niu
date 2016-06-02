@@ -103,4 +103,11 @@
     [CustomURLCache setSharedURLCache:urlCache];
 }
 
++ (BOOL)isFirstComing {
+    if ([[[[NSUserDefaults standardUserDefaults] objectForKey:GUIDE_KEY] description] rangeOfString:GUIDE_KEY].length == GUIDE_KEY.length) {
+        return NO;
+    }
+    return YES;
+}
+
 @end

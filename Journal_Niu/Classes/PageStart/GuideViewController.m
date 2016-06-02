@@ -68,14 +68,17 @@
 }
 
 - (void)setTimer {
+    [self endTimer];
+    _timer = [NSTimer timerWithTimeInterval:3.0f target:self selector:@selector(timerChanged) userInfo:nil repeats:YES];
+    
+    [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)endTimer {
     if (_timer) {
         [_timer invalidate];
         _timer = nil;
     }
-    
-    _timer = [NSTimer timerWithTimeInterval:3.0f target:self selector:@selector(timerChanged) userInfo:nil repeats:YES];
-    
-    [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)timerChanged {
@@ -86,6 +89,9 @@
 
 #pragma mark - button click
 - (IBAction)jinru:(id)sender {
+    _moviePlayer = nil;
+    [self endTimer];
+    
     [[AVAudioSession sharedInstance] setCategory:_avaudioSessionCategory error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:GUIDE_KEY forKey:GUIDE_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -110,10 +116,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    if (_timer) {
-        [_timer invalidate];
-        _timer = nil;
-    }
+    [self endTimer];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{

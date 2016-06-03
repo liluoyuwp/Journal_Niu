@@ -110,4 +110,11 @@
     return YES;
 }
 
++ (void)registerNoti {
+    UIUserNotificationType type = UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+
 @end

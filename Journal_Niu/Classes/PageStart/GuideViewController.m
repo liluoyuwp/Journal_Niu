@@ -93,13 +93,21 @@
     _moviePlayer = nil;
     [self endTimer];
     
+    //回复音频模式
     [[AVAudioSession sharedInstance] setCategory:_avaudioSessionCategory error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:GUIDE_KEY forKey:GUIDE_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    //出事话tabber。
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle: nil ];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     window.rootViewController = [storyBoard instantiateViewControllerWithIdentifier:@"tabbar"];
+    
+    //注册通知
+    UIUserNotificationType type = UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 #pragma mark - UIScrollViewDelegate

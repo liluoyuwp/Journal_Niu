@@ -38,4 +38,7 @@
 /// 是否首次启动.
 + (BOOL)isFirstComing;
 
+/// 注册通知
++ (void)registerNoti;
+
 @end

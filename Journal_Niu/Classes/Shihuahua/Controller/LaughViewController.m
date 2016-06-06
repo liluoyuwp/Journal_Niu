@@ -128,13 +128,13 @@
         model.height == nil ||
         [model.height isKindOfClass:[NSNull class]] ||
         [[model.height description] rangeOfString:@"null"].length == 4) {
-        return 250.78f;
+        return 250.78f + 8;
     }
     
     CGFloat width = [model.width floatValue];
     CGFloat height = [model.height floatValue];
     height = height / (width / SCREEN_WIDTH);
-    return height;
+    return height + 8;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

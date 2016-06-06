@@ -52,7 +52,7 @@
     lifeVC.title = @"乐活";
     
     SCNavTabBarController * navTabBarController = [[SCNavTabBarController alloc] init];
-    //注意顺序 由左到右
+    //注意顺序 由左到右 添加各个Controller
     navTabBarController.subViewControllers = @[newsVC,soupVC,HorizonVC,growupVC,artVC,lifeVC];
     
     navTabBarController.showArrowButton = YES;

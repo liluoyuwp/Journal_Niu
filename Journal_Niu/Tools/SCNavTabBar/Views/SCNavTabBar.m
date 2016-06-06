@@ -136,7 +136,6 @@
     
     for (NSString *title in titles)
     {
-//        CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
         CGSize size = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontSize]]}];
         
         NSNumber *width = [NSNumber numberWithFloat:size.width + 40.0f];

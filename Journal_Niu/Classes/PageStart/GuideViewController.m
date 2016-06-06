@@ -70,7 +70,6 @@
 - (void)setTimer {
     [self endTimer];
     _timer = [NSTimer timerWithTimeInterval:3.0f target:self selector:@selector(timerChanged) userInfo:nil repeats:YES];
-    
     [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
@@ -85,6 +84,9 @@
     _pageControl.currentPage = (_pageControl.currentPage + 1) % 4;
     _infoLabel.text = _arrayDS[_pageControl.currentPage];
     [_scrollView setContentOffset:CGPointMake((_pageControl.currentPage) * SCREEN_WIDTH, 0) animated:YES];
+    if (_pageControl.currentPage == 3) {
+        _jinruAiyilin.hidden = NO;
+    }
 }
 
 #pragma mark - button click
@@ -122,6 +124,10 @@
     
     self.pageControl.currentPage = page;
     _infoLabel.text = _arrayDS[page];
+    
+    if (_pageControl.currentPage == 3) {
+        _jinruAiyilin.hidden = NO;
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

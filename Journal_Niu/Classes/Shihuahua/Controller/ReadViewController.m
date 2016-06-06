@@ -75,7 +75,6 @@
     self.textView.text = model.des;
     
     _scrollView.contentSize = CGSizeMake(_arrayDS.count * SCREEN_WIDTH, 0);
-    
     for (int i = 0; i < _arrayDS.count; i++) {
         ReadModel * model = _arrayDS[i];
         

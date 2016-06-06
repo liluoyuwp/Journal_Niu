@@ -32,7 +32,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
     CustomURLCache *urlCache = (CustomURLCache *)[NSURLCache sharedURLCache];
     urlCache.isCache = NO;
 }
@@ -51,9 +51,8 @@
 }
 
 - (void)initUI {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"＜" style:UIBarButtonItemStyleDone target:self action:@selector(barButtonPopBack)];
+
     self.navigationItem.title = _text;
-    
     self.view.backgroundColor = [UIColor whiteColor];
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
